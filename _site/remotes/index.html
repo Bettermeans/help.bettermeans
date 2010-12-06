@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - Working with remotes</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      
+        <script type="text/javascript">var main_category = "everyday_git"</script>
+      
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>Working with remotes</h1>
+
+              <div class="wikistyle">
+                <p>This guide will cover all the basic day-to-day commands you will use with git to interact with remote repos. For push operations you can only interact with repos you own or are a collaborator on. To gain access to a public repo, check out the <a href='/forking'>forking guide</a>.</p>
+
+<h2 id='managing_remotes'>Managing remotes</h2>
+
+<p>Before you can perform any remote operations it is usually best to set up remotes in your repo. If you cloned a repo git will create a remote named &#8220;origin&#8221; automatically. There are a few commands to help you manage these remotes:</p>
+
+<h3 id='add'>add</h3>
+
+<p>This one is pretty straightforward, <code>git remote add test git://github.com/user/test.git</code> will create a new remote named &#8220;test&#8221; pointing to <code>git://github.com/user/test.git</code>. If we add a <code>-f</code> flag on the end, git will also fetch the remote for us.</p>
+
+<h3 id='rename'>rename</h3>
+
+<p>Rename a remote and its remote-tracking branches&#8230; <code>git remote rename test example</code> will rename the &#8220;test&#8221; remote to &#8220;example&#8221;.</p>
+
+<h3 id='rm'>rm</h3>
+
+<p>Another basic command, <code>git remote rm example</code> will delete the &#8220;example&#8221; remote and any remote-tracking branches we&#8217;ve fetched.</p>
+
+<h3 id='changing_a_remotes_url'>Changing a remote&#8217;s URL</h3>
+
+<p>There is no direct command to change a remote&#8217;s URL, so you will usually run <code>git remote rm</code> followed by <code>git remote add</code> to change a URL. You can also edit the repo&#8217;s <code>.git/config</code> file directly to change the URL without re-fetching the remote.</p>
+
+<h2 id='fetching'>Fetching</h2>
+
+<p>When working with other users&#8217; repos there are four basic commands you will need, <code>git clone</code>, <code>git fetch</code>, <code>git pull</code> and <code>git remote prune</code>.</p>
+
+<h3 id='clone'>clone</h3>
+
+<p>To grab a full copy of another user&#8217;s repo when you do not have a local repo already, you will use <code>git clone URL</code>. For public repos, the URL can be a read-only URL like <code>git://github.com/user/repo.git</code> or an HTTP read-only URL like <code>http://github.com/user/repo.git</code>. For public repos you own or are a collaborator on, and all private repos, you must use a private ssh url like <code>git@github.com:user/repo.git</code>. You can find each of the URLs available to you in the header of the repo page:</p>
+
+<p><img src='http://img.skitch.com/20100201-e6dmj54pgmw6wq7314jtbej31k.jpg' alt='header' /></p>
+
+<p>Running <code>git clone URL</code> will automatically create a new subfolder, fetch the contents of the repo into this subfolder, then create and checkout the default branch (usually &#8220;master&#8221;). If there are other branches on the remote you will need to create a local branch to work in, for example <code>git checkout -b fix_stuff origin/fix_stuff</code></p>
+
+<h3 id='fetch'>fetch</h3>
+
+<p>If you already have a local repo with a remote set up, you can grab all branches and tags for the remote using <code>git fetch REMOTENAME</code>. By default, <code>git clone</code> will make a remote named &#8220;origin&#8221; pointing to the URL you cloned from. Fetch does not make any changes to local branches, so you will need to merge remote branches to bring those changes in.</p>
+
+<h3 id='pull'>pull</h3>
+
+<p>Similar to <code>git fetch</code>, you can use <code>git pull REMOTENAME BRANCHNAME</code> to fetch a specific branch and merge it into your current local branch. For on-time pulls from other users&#8217; repos you can use a URL instead of a remote name. This will pull from that URL without adding a remote.</p>
+
+<p>Because pull performs a merge you should ensure that your working tree and index are clean before running the command. If you run into a merge conflict you cannot resolve or decide to abort the merge, you can use <code>git reset ORIG_HEAD --hard</code> to take the branch back to the commit it was on before you pulled.</p>
+
+<h3 id='prune'>prune</h3>
+
+<p>Sometimes branches are deleted from a remote repo. By default, <code>git fetch</code> will not remove any remote-tracking branches that have been deleted on the remote repo. Running <code>git remote prune REMOTENAME</code> will delete these tracking branches.</p>
+
+<h2 id='pushing'>Pushing</h2>
+
+<p>At some point you&#8217;re going to want to publish commits from your repo into a remote for other users to fetch. This process is fairly straightforward. First you need a repo on github you can push to. Either create a new repo, gain collaborator permissions on someone else&#8217;s repo, or <a href='/forking'>fork</a> someone else&#8217;s repo. You can only push to an ssh URL like <code>git@github.com:user/repo.git</code>. If you cloned another repo with a read-only URL you can add a second remote for your URL or remove or rename the existing remote. See the <a href='http://www.kernel.org/pub/software/scm/git/docs/git-remote.html'>git remote manpage</a> for more information on changing remotes.</p>
+
+<h3 id='pushing_a_branch'>Pushing a branch</h3>
+
+<p>To push a local branch to an established remote, you simply need to use <code>git push REMOTENAME BRANCHNAME</code> If you don&#8217;t want to use the same name on the remote branch you can use <code>git push REMOTENAME LOCALBRANCHNAME:REMOTEBRANCHNAME</code>.</p>
+
+<h4 id='dealing_with_nonfastforward_errors'>Dealing with &#8220;non-fast-forward&#8221; errors</h4>
+
+<p>From time to time you may encounter this error while pushing:</p>
+<pre class='terminal'>
+$ git push origin master
+To ../remote/
+ ! [rejected]        master -> master (non-fast forward)
+error: failed to push some refs to '../remote/'
+To prevent you from losing history, non-fast-forward updates were rejected
+Merge the remote changes before pushing again.  See the 'non-fast forward'
+section of 'git push --help' for details.
+</pre>
+<p>This error can be a bit overwhelming at first, do not fear. Simply put, git cannot make the change on the remote without losing commits, so it refuses the push. Usually this is caused by another user pushing to the same branch. You can remedy this by fetching and merging the remote branch, or using pull to perform both at once.</p>
+
+<p>In other cases this error is a result of destructive changes made locally by using commands like <code>git commit --amend</code> or <code>git rebase</code>. While you can override the remote by adding <code>--force</code> to the push command, you should only do so if you are absolutely certain this is what you want to do. Force-pushes can cause issues for other users that have fetched the remote branch, and is considered bad practice. When in doubt, don&#8217;t force-push.</p>
+
+<h3 id='pushing_tags'>Pushing tags</h3>
+
+<p>By default, push will only send the ref you specify. To push a single tag you can simply use <code>git push REMOTENAME TAGNAME</code>. To push all tags while pushing another branch, you can use <code>git push REMOTENAME BRANCHNAME --tags</code>.</p>
+
+<h3 id='deleting_a_remote_branch_or_tag'>Deleting a remote branch or tag</h3>
+
+<p>This command is a bit arcane at first glance&#8230; <code>git push REMOTENAME :BRANCHNAME</code>. If you look at the advanced push syntax above it should make a bit more sense. You are literally telling git &#8220;push <em>nothing</em> into BRANCHNAME on REMOTENAME&#8221;.</p>
+
+<h2 id='links'>Links</h2>
+
+<ul>
+<li><a href='http://progit.org/book/ch2-5.html'>Pro Git</a></li>
+
+<li><a href='http://www.kernel.org/pub/software/scm/git/docs/git-remote.html'>git remote man page</a></li>
+
+<li><a href='http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#sharing-development'>Git user&#8217;s manual</a></li>
+</ul>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li>Working with remotes</li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - Managing multiple clients</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      <script type="text/javascript">var main_category = "setup"</script>
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>Managing multiple clients</h1>
+
+              <div class="wikistyle">
+                <p>Are you a freelance developer working on multiple projects for multiple clients, and want to manage them here on GitHub? Never fear, this guide will detail the most common solutions to this problem</p>
+
+<h1 id='one_account_multiple_collaborators'>One account, multiple collaborators</h1>
+
+<p>This design lets you retain control over the repos, but still gives your clients access to them.</p>
+
+<p>This is the simplest (and cheapest) approach. Simply create one account with a plan that provides enough private repos to cover all your projects. If your client needs access to the source code, have them create a free account. You can then add their free account as a collaborator on the projects you wish for them to have access to.</p>
+
+<p>If you wish, you can even bill your clients for the cost of your account, and maintaining their repos on it!</p>
+
+<h1 id='multiple_accounts_one_collaborator'>Multiple accounts, one collaborator</h1>
+
+<p>This design gives the control over the repos (and the bill) to your client, but still allows you to push into all your clients&#8217; repos from a single account.</p>
+
+<p>With this design, have your clients each open their own paid account and create empty repos for each project. Add your account to the repos as a collaborator. You can now push to their repos as if they were your own!</p>
+
+<h1 id='multiple_accounts_no_collaborators'>Multiple accounts, no collaborators</h1>
+
+<p><strong>This is by far the most complicated setup, and should be avoided if at all possible.</strong></p>
+
+<p>If, for whatever reason, you <em>must</em> push to each client&#8217;s repos using <em>their</em> account, this is the setup you will have to use.</p>
+
+<p>First, generate a second keypair to use for your second account. To create this key follow <a href='/key-setup-redirect'>this guide</a>, but specify a path for the key. If you do not specify a path you may overwrite your existing key. For example, you could use <code>~/.ssh/id_rsa_client</code>. Once the key has been created, add the new public key to the client&#8217;s account on GitHub. To configure your local settings, see <a href='/multiple-keys'>this guide</a>.</p>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li>Managing multiple clients</li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li>Managing multiple clients</li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

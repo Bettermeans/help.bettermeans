@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - Sending pull requests</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      <script type="text/javascript">var main_category = "collaborating"</script>
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>Sending pull requests</h1>
+
+              <div class="wikistyle">
+                <style type='text/css'>
+.main img {
+  border:1px solid #eee;
+  padding:5px;
+}
+.main img.inline {
+  vertical-align:middle;
+  border:0;
+}
+</style>
+<p>Pull requests let you tell others about changes you&#8217;ve pushed to a GitHub repository. Once a pull request is sent, interested parties can review the set of changes, discuss potential modifications, and even push follow-up commits if necessary.</p>
+
+<p>This guide walks through the process of sending a hypothetical pull request and using the various code review and management tools to take the change to completion.</p>
+
+<h2 id='a_quick_note_on_collaborative_development_models'>A Quick Note on Collaborative Development Models</h2>
+
+<p>There are two popular models of collaborative development on GitHub:</p>
+
+<ol>
+<li>
+<p>The <em>Fork + Pull Model</em> lets anyone fork an existing repository and push changes to their personal fork without requiring access be granted to the source repository. The changes must then be pulled into the source repository by the project maintainer. This model reduces the amount of friction for new contributors and is popular with open source projects because it allows people to work independently without upfront coordination.</p>
+</li>
+
+<li>
+<p>The <em>Shared Repository Model</em> is more prevalent with small teams and organizations collaborating on private projects. Everyone is granted push access to a single shared repository and topic branches are used to isolate changes.</p>
+</li>
+</ol>
+
+<p>Pull requests are especially useful in the <em>Fork + Pull Model</em> because they provide a way to notify project maintainers about changes in your fork. However, they&#8217;re also useful in the <em>Shared Repository Model</em> where they&#8217;re used to initiate code review and general discussion about a set of changes before being merged into a mainline branch.</p>
+
+<h2 id='before_you_begin'>Before You Begin</h2>
+
+<p>This guide assumes that <a href='http://github.com/signup'>you have a GitHub account</a>, that you&#8217;ve forked an existing repository and pushed your changes. For help with forking and pushing changes, see the <a href='/forking/'>Forking a project</a> topic.</p>
+
+<h2 id='initiating_the_pull_request'>Initiating The Pull Request</h2>
+
+<p>In the following example, <strong>kneath</strong> has completed some work on an error page for the GitHub Jobs web application, pushed three commits to a topic branch in his fork, and would like someone to review and merge.</p>
+
+<p>Navigate to your repository with the changes you want someone else to pull and press the <em>Pull Request</em> button.</p>
+
+<p><img src='http://img.skitch.com/20100831-qfk1c9wyt89pfgfxg61bh1r8rn.png' alt='' /></p>
+
+<p>Pull requests can be sent from any branch or commit but it&#8217;s recommended that a topic branch be used so that follow-up commits can be pushed to update the pull request if necessary.</p>
+
+<h2 id='previewing_the_pull_request'>Previewing The Pull Request</h2>
+
+<p>After pressing the <em>Pull Request</em> button, you are presented with a preview page where you can enter a title and optional description, see exactly what commits will be included when the pull request is sent, and also see who the pull request will be sent to:</p>
+
+<p><img src='http://img.skitch.com/20100831-qit9sjhuqk42t4ww91ifm5tm81.png' alt='' /></p>
+
+<p>If you&#8217;re sending from a topic branch, the title is pre-filled based on the name of the branch. Markdown is supported in the description, so you can embed images or use preformatted text blocks.</p>
+
+<p>Switch to the <em>Commits</em> tab to ensure that the correct set of changes is being sent:</p>
+
+<p><img src='http://img.skitch.com/20100831-c9g4pcsjwnfj14csrpytenxyfn.png' alt='' /></p>
+
+<p>Review the diff of all changes by switching to the <em>Files Changed</em> tab:</p>
+
+<p><img src='http://img.skitch.com/20100831-qpc5bu8grycefnnbaagnuwbckq.png' alt='' /></p>
+
+<h2 id='changing_the_commit_range_and_destination_repository'>Changing The Commit Range and Destination Repository</h2>
+
+<p>By default, pull requests are assumed to be based on the parent-most repository&#8217;s integration branch. In this case, the <code>kneath/jobs</code> repository was forked from <code>github/jobs</code> so the pull request is assumed to be based on the <code>master</code> branch of the <code>github/jobs</code> repository. In a great majority of cases, the defaults will be right; however, if any of this information is incorrect, press the <em>Change Commits</em> button.</p>
+
+<p><img src='http://img.skitch.com/20100831-nm1mgb6n8ng7e4nrdesucqx98h.png' alt='' /></p>
+
+<p>The commit range selector will expand, allowing the base repository, base branch, and head branch to be customized:</p>
+
+<p><img src='http://img.skitch.com/20100831-pwsq1inmr7m7y61dfcyxnhjkkd.png' alt='' /></p>
+
+<p>The easiest way of thinking about the commit range is this: the <em>base branch</em> is <strong>where</strong> you think changes should be applied, the <em>head branch</em> is <strong>what</strong> you would like to be applied.</p>
+
+<p>Changing the base repository changes who is notified of the pull request. Everyone that can push to the base repository will receive an email notification and see the new pull request in their dashboard the next time they log in.</p>
+
+<p>Once you&#8217;re happy with the commit range, press the <em>Update Commit Range</em> button to update the commit and files changed preview areas.</p>
+
+<h2 id='sending_the_pull_request'>Sending The Pull Request</h2>
+
+<p>Once you&#8217;ve entered the title and description, made any necessary customizations to the commit range, and reviewed the commits and file changes to be sent, press the <em>Send pull request</em> button.</p>
+
+<p><img src='http://img.skitch.com/20100831-fe6i533swbgsgypgc645f999i.png' alt='' /></p>
+
+<p>The pull request is sent immediately. You&#8217;re taken to the main pull request discussion and review page. Additionally, all repository collaborators and followers will see an event in their dashboard:</p>
+
+<p><img src='http://img.skitch.com/20100831-bj3rg8bac4buemstnwqy7wwxq2.png' alt='' /></p>
+
+<h2 id='managing_pull_requests'>Managing Pull Requests</h2>
+
+<p>All pull requests sent or received by you are browseable through the pull request dashboard.</p>
+
+<p><img src='http://img.skitch.com/20100831-xfscxin81wj5j3gwyas2sd398q.png' alt='' /></p>
+
+<p>Pull requests for a specific repository are also browseable by anyone with access by visiting the <em>Network -&gt; Pull Requests</em> page.</p>
+
+<p><img src='http://img.skitch.com/20100823-bahbpwpemx3jh2kpke77d2dxtc.png' alt='' /></p>
+
+<p>The pull request dashboard and the repository pull request list support a wide range of filtering and sorting controls. Use them to narrow down the list to the pull requests you&#8217;re interested in.</p>
+
+<h2 id='reviewing_proposed_changes'>Reviewing Proposed Changes</h2>
+
+<p>When you receive a pull request, the first thing to do is review the set of proposed changes. Pull requests are tightly integrated with the underlying git repository, so you can see exactly what commits would be merged should the request be accepted:</p>
+
+<p><img src='http://img.skitch.com/20100831-81im4n771y5tcwg3ryixajtfeg.png' alt='' /></p>
+
+<p>You can also review the cumulative diff of all file changes across all commits.</p>
+
+<p><img src='http://img.skitch.com/20100831-enh8t415ryr5b1sw45shq9ier3.png' alt='' /></p>
+
+<h2 id='pull_request_discussion'>Pull Request Discussion</h2>
+
+<p>After reviewing the basic description, commits, and cumulative diff, the person tasked with applying the changes may have questions or comments. Perhaps the coding style doesn&#8217;t match project guideline, or the change is missing unit tests, or maybe everything looks great and some props are in order. The discussion view is designed to encourage and capture this type of discussion.</p>
+
+<p><img src='http://img.skitch.com/20100831-j7fapxihs2a3i48ai5qmqceskp.png' alt='' /></p>
+
+<p>The discussion view starts with the pull request&#8217;s original title and description and then captures additional activity to display chronologically from there. Any of the following types of activity are captured as they happen:</p>
+
+<ul>
+<li>Comments left on the pull request itself.</li>
+
+<li>Additional commits pushed to the pull request&#8217;s branch.</li>
+
+<li>File and line notes left on any of the commits included in the pull request&#8217;s range.</li>
+</ul>
+
+<p>Pull request comments are Markdown compatibility, so you can embed images, use preformatted text blocks, and other formatting supported by Markdown.</p>
+
+<h2 id='merging_a_pull_request'>Merging a Pull Request</h2>
+
+<p>Once the pull request is deemed satisfactory, someone with push access to the destination repository must apply the changes and push the updated branch. There are a variety of ways to accomplish this. Two popular methods are described below.</p>
+
+<h4 id='fetch_and_merge'>Fetch and Merge</h4>
+
+<p>This is the most common method of fetching and applying changes. It requires adding a remote for the person that sent the pull request, fetching from that repository, merging the requested branch, fixing any conflicts, and pushing the newly merged branch back to the repository:</p>
+<pre class='console'>
+<span>$</span> git checkout master
+<span>$</span> git remote add kneath git://github.com/kneath/jobs.git
+<span>$</span> git fetch kneath
+<span>$</span> git merge kneath/error-page
+<span>$</span> git push origin master
+</pre>
+<h4 id='patch_and_apply'>Patch and Apply</h4>
+
+<p>The <em>fetch and merge</em> approach works great when you&#8217;re working on a team or repeatedly applying changes from the same small group of people. Another approach that&#8217;s a bit quicker in one-off cases is to use <code>git-am</code>.</p>
+
+<p>Every pull request has a <code>.patch</code> URL where you can grab a textual patch file to feed into the <code>git-am</code> command:</p>
+<pre class='console'>
+<span>$</span> git checkout master
+<span>$</span> curl http://github.com/github/jobs/pull/25.patch | git am
+<span>$</span> git push origin master
+</pre>
+<h2 id='closing_a_pull_request'>Closing a Pull Request</h2>
+
+<p>Pull Requests are automatically closed when the requested commits are merged into the destination repository. An event is generated to let all repository collaborators and followers know that the merge occurred:</p>
+
+<p><img src='http://img.skitch.com/20100831-x9ush35wkyxwmw4sw8yd5sx1eg.png' alt='' /></p>
+
+<p>It&#8217;s also possible to manually close a pull request in cases where the set of changes are rejected. This is also sometimes necessary if the changes are applied with <code>git-cherry-pick</code> or using some other mechanism that disallows the merge from being detected.</p>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li>Sending pull requests</li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

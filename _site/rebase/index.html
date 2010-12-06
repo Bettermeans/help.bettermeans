@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - All your rebase</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      
+        <script type="text/javascript">var main_category = "everyday_git"</script>
+      
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>All your rebase</h1>
+
+              <div class="wikistyle">
+                <p>One often overlooked feature of git is the <code>git rebase</code> command. Rebase allows you to easily change a series of commits, reordering, editing, or squashing commits together into a single commit.</p>
+
+<p><em>It is considered bad practice to rebase commits which you have already pushed to a remote repo. Doing so may invoke the wrath of the git gods&#8230; you have been warned.</em></p>
+
+<p>So, you&#8217;ve cloned a repository, and hacked away at it; separated it into logical chunks, and it&#8217;s now ready to submit!</p>
+
+<p>So you send your patch series, or publish your branch, and ask for a pull, but a quick review reveals that there are some errors in these patches!</p>
+
+<p>Now, the maintainer may send these patches back to you, and ask you to fix these, this guide shows several ways on how this can be accomplished.</p>
+
+<p>Before you start, make sure you have a clean working tree (i.e. no modified files).</p>
+
+<h2 id='using_rebase_i'>Using rebase -i</h2>
+
+<p>This is the most general (and easiest) way to edit history.</p>
+
+<h3 id='invocation'>Invocation</h3>
+
+<p>The syntax is:</p>
+<pre class='terminal'>git rebase -i last_good_commit</pre>
+<p>For example, to rebase all the commits from master to the current branch&#8217;s head:</p>
+<pre class='terminal'>git rebase -i master</pre>
+<p>Another common practice is to rebase the last few commits in your current branch. If our branch is named fix_stuff and we want to rebase the last 5 commits we can run:</p>
+<pre class='terminal'>git rebase -i fix_stuff~5</pre>
+<p>Running the command with the <code>-i</code> flag will invoke your text editor with a file detailing the commits that will be rebased. This will also list the command available:</p>
+<pre>
+pick 1fc6c95 Patch A
+pick 6b2481b Patch B
+pick dd1475d something I want to split
+pick fa39187 something to add to patch A
+pick 7b36971 something to move before patch B
+
+# Rebase 41a72e6..7b36971 onto 41a72e6
+#
+# Commands:
+#  p, pick = use commit
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+# However, if you remove everything, the rebase will be aborted.
+#
+</pre>
+<p>At this point you can edit the file to change the order of the commits. There are three commands available:</p>
+
+<h3 id='pick'>Pick</h3>
+
+<p>Pick is used to include a commit. By default you will be given a list of the commits you chose to rebase, in order of oldest (top) to newest (bottom). Rearranging the order of the pick commands will change the order of the commits when you begin the rebase.</p>
+
+<h3 id='edit'>Edit</h3>
+
+<p>Using the edit command on a commit will cause rebase to pick the commit and pause. During this pause you can amend the commit, adding to or removing from it. You can also make more commits before you continue the rebase, this allows you to split a large commit into smaller ones. You should always ensure that your working tree and index are clean before you resume the rebase.</p>
+
+<h3 id='squash'>Squash</h3>
+
+<p>This command lets you combine two or more commits into a single commit. When used the commit will be picked and then amended into the commit above it. Git will then pause the rebase and open your text editor with the commit messages from both commits. After you have edited the message to your satisfaction save the file and close the editor. Git will resume the rebase.</p>
+
+<h3 id='example'>Example</h3>
+
+<p>In this rebase we will cover all 3 commands. We start our rebase with <code>git rebase -i master~5</code> and are presented with this file in our editor:</p>
+<pre>
+pick 1fc6c95 Patch A
+pick 6b2481b Patch B
+pick dd1475d something I want to split
+pick fa39187 something to add to patch A
+pick 7b36971 something to move before patch B
+
+# Rebase 41a72e6..7b36971 onto 41a72e6
+#
+# Commands:
+#  p, pick = use commit
+#  e, edit = use commit, but stop for amending
+#  s, squash = use commit, but meld into previous commit
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+# However, if you remove everything, the rebase will be aborted.
+#
+</pre>
+<p>There are a few things we want to do here, we want to move the last two commits up before the &#8220;Patch B&#8221; commit. One of those commits will be squashed into the &#8220;Patch A&#8221; commit. Finally we want to edit the last commit to split it into two commits. We&#8217;ll change the file as such:</p>
+<pre>
+pick 1fc6c95 Patch A
+squash fa39187 something to add to patch A
+pick 7b36971 something to move before patch B
+pick 6b2481b Patch B
+edit dd1475d something I want to split
+</pre>
+<p>Now we save and close the editor to begin the rebase. Since the first operation is a squash our editor opens:</p>
+<pre>
+# This is a combination of two commits.
+# The first commit's message is:
+
+Patch A
+
+# This is the 2nd commit message:
+
+something to add to patch A
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Not currently on any branch.
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file>..." to unstage)
+#
+#	modified:   a
+#
+</pre>
+<p>As usual, edit the file as we wish, save, close the editor. The rebase will proceed until it gets to the edit operation, where it tells us:</p>
+<pre class='terminal'>
+You can amend the commit now, with
+
+        git commit --amend
+
+Once you are satisfied with your changes, run
+
+        git rebase --continue
+</pre>
+<p>At this point we would edit the files we need, do a <code>git commit --amend</code>, make our second commit, and ensure that our working tree and index are clean. Now we can tell git to complete the rebase with <code>git rebase --continue</code>. You might wish to use <code>git-gui</code> for amending commits like this, it can make things much easier by visualizing the changes you are committing.</p>
+
+<h2 id='notes'>Notes</h2>
+
+<ul>
+<li>If others have branched off of the work you have doing, do <em>not</em> modify any of the commits. The rule in Git is that if you have work that people are working off of, you will make it hell for them if you change it. Rebasing and amending are only for commits where you <em>know</em> no one is working off of.</li>
+
+<li>In the upcoming 1.5.6, there will be new rebase -i commands &#8220;tag&#8221;, &#8220;merge&#8221;, and &#8220;reset&#8221;, as well.</li>
+</ul>
+
+<h2 id='references'>References</h2>
+
+<ul>
+<li><a href='http://www.kernel.org/pub/software/scm/git/docs/user-manual.html#cleaning-up-history'>Git user manual - Cleaning up history</a></li>
+
+<li><a href='http://www.kernel.org/pub/software/scm/git/docs/git-rebase.html'>git-rebase documentation</a></li>
+
+<li><a href='http://www.kernel.org/pub/software/scm/git/docs/git-commit.html'>git-commit documentation</a></li>
+</ul>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li>All your rebase</li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

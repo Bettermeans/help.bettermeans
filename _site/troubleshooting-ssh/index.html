@@ -1,0 +1,394 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - Troubleshooting SSH issues</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      <script type="text/javascript">var main_category = "troubleshooting"</script>
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>Troubleshooting SSH issues</h1>
+
+              <div class="wikistyle">
+                <p>This guide contains the solutions to the most common <span class="caps">SSH</span> connection issues encountered on GitHub</p>
+<p>The first step to testing your connection is to run <code>ssh git@github.com</code>.  If your key works, you should get a success message:<br />
+<pre class="terminal">$ ssh git@github.com<br />
+Hi username! You&#8217;ve successfully authenticated, but GitHub does not provide shell access.</pre></p>
+<p>If this step fails, try running <code>ssh -v git@github.com</code>.  This will print out debug info on what ssh is trying to do.  In this output you should check that ssh is connecting to the correct server, on the correct port (22).  Many firewalls and proxies will block this connection.  Also ensure that ssh is reading the correct key files, these are at ~/.ssh/id_rsa, id_dsa and identity by default.  If your key is not at this location, you should move it or create an override (see the &#8220;<span class="caps">SSH</span> config&#8221; section below).</p>
+<h2>Permission to user/repo2 denied to user/repo1</h2>
+<p>This error occurs when you attach your key as a deploy key on repo1.  You can push and pull from that repo without issue, but you won&#8217;t have access to any other repo with your key.  To solve this, remove the key from repo1&#8217;s deploy keys and attach it on your <a href="https://github.com/account">account page</a> instead.  This key will now have access to all repos your account has access to.</p>
+<h2>Permission denied (publickey)</h2>
+<p>This is usually caused when ssh cannot find your keys.  Make sure your key is in the default location, <code>~/.ssh</code>. If you run <code>ssh-keygen</code> again and just press enter at all 3 prompts it will be placed here automatically. Then you can add the contents of id_rsa.pub to <a href="https://github.com/account">my github keys</a>. If id_rsa.pub doesn&#8217;t work try id_dsa.pub. You might need to generate a new dsa key with <code>ssh-keygen -t dsa</code> if you just have an rsa key.</p>
+<h3>Finding out what keys ssh is using</h3>
+<p>Finding what keys ssh is offering to the server is fairly simple.  Run <code>ssh -v git@github.com</code> and look at the output:</p>
+<pre class="terminal">debug1: Next authentication method: publickey
+debug1: Trying private key: /Users/tekkub/.ssh/identity
+debug1: Trying private key: /Users/tekkub/.ssh/id_rsa
+debug1: Trying private key: /Users/tekkub/.ssh/id_dsa
+debug1: No more authentication methods to try.</pre>
+<p>In this example, <span class="caps">SSH</span> could not find any keys (&#8220;Trying&#8221; means ssh is trying to find the key on disk).  We should either rename our keypair to use a default name, or run <code>ssh-add path/to/key</code> to make <span class="caps">SSH</span> aware of the key&#8217;s existence.</p>
+<pre class="terminal">debug1: Next authentication method: publickey
+debug1: Offering public key: /Users/tekkub/.ssh/id_rsa
+debug1: Remote: Forced command: gerve tekkub
+...
+ERROR: Hi tekkub! You've successfully authenticated, but GitHub does not provide shell access</pre>
+<p>Here we&#8217;ve renamed our keypair to <code>~/.ssh/id_rsa</code>.  <span class="caps">SSH</span> finds the key and offers it to the server.  This key works and we authenticate as user &#8220;tekkub&#8221;.</p>
+<h2>Issues when using sudo</h2>
+<p style="padding-left:2em;"><em>You shouldn&#8217;t run <code>sudo git</code> unless you have a very good reason.  If you don&#8217;t know if you have a good reason to use sudo, it&#8217;s likely that you do not have one.</em></p>
+<p>If you are using sudo with git commands (e.g. using <code>sudo git clone</code> because you are deploying to a root-owned folder), ensure that you also generated the key using sudo.  Otherwise, you will have generated a key for your current user, but when you are doing sudo git, you are actually the root user &#8211; thus, the keys will not match.</p>
+<p>Simply put, if you are using <code>sudo git</code>, then also use <code>sudo ssh-keygen</code>.</p>
+<h2><span class="caps">SSH</span> config</h2>
+<p>If your github authentication information is different from your machine account information, you&#8217;ll need to modify your ssh configuration file.</p>
+<p>Create or open the file at <code>~/.ssh/config</code> Add the following lines:</p>
+<pre>Host github.com
+	User git
+	Hostname github.com
+	PreferredAuthentications publickey
+	IdentityFile [local path to private key half of github public key you provided]</pre>
+<p>You may also need to update the permissions on your .ssh folder and its contents. The <span class="caps">SSH</span> application will ignore secret files that are too permissive.</p>
+<pre class="terminal">$ chmod 700 ~/.ssh
+$ chmod 600 ~/.ssh/*</pre>
+<h2>No supported authentication methods available</h2>
+<p>You should be aware of the environment variable GIT_SSH, which is used by git to find your ssh-speaking client, if ssh doesn&#8217;t work for you.  The git install may be using plink.exe (via GIT_SSH) to perform the authentication.  If so, make sure you have pageant.exe running, and the key you created for github loaded into it.  This provides the key to plink.exe; without it, the above error will occur.</p>
+<p>See <a href="http://groups.google.com/group/github/browse_thread/thread/21fd06fb8c3f43bd/f5c44b2197d1be15">this post</a> for a longer discussion.</p>
+<p>Especially with cygwin-git+pageant+putty/plink, you might want to set GIT_SSH to your plink.exe location &#8212; unless that doesn&#8217;t work for you. In certain circumstances (perhaps after a service pack installation), you will find git network operations failing with<br />
+this is because plink.exe running from your (cygwin-provided) git command <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/wishlist/cygwin-clobbers-pageant.html"><strong>can&#8217;t talk with pageant to get its keys</strong></a> . A solution is to set up a script that has:<br />
+<pre class="terminal">/cygdrive/c/ntnot/plink.exe -i &#8220;c:\users\you\.ssh\key-file-for-github.ppk&#8221; $1 $2</pre></p>
+<p>and set GIT_SSH to point to this:</p>
+<pre class="terminal">declare -x GIT_SSH="c:\path\to\script"</pre>
+<p>This explicitly provides the key for plink to use, rather than have it talk with pageant.</p>
+<p>This problem occured for me when I used the executable with pageant that came with WinSCP, but a version of plink in a different directory. I have not found the exact cause yet. All versions were plink/pageant 0.60. (Not running under Cygwin)</p>
+<p style="padding-left:1em;">I did not have luck with this approach; GIT_SSH was set to plink.exe already; when I tried to create this script and reset the GIT_SSH I got a &#8220;could not fork&#8221; error back from git even though the script would run happily on its own &#8211; elijahsmith 9/11/08</p>
+<p style="padding-left:1em;">I couldn&#8217;t get the latest versions of plink and pageant (as of 2008-Nov-15) to talk, and I&#8217;m not running Cygwin. The only solution was to revert to using open-ssh by setting <code>GIT_SSH</code> to <code>C:\Program Files\prg\Git\bin\ssh.exe</code>. &#8212; <a href="http://github.com/dandv">dandv</a></p>
+<h2>On Windows, you can&#8217;t type &#8220;y&#8221; to confirm the &#8220;Store [server&#8217;s host] key in cache?&#8221; prompt</h2>
+<p>This happens because git eats up the ssh client&#8217;s <span class="caps">STDIN</span> output. To work around that, launch <code>ssh github.com</code> or <code>plink.exe -agent github.com</code> standalone and press &#8220;y&#8221; at the prompt.</p>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li>Troubleshooting SSH issues</li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li>Troubleshooting SSH issues</li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

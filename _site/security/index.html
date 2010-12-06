@@ -1,0 +1,435 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - GitHub Security</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      
+        <script type="text/javascript">var main_category = "site_policy"</script>
+      
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>GitHub Security</h1>
+
+              <div class="wikistyle">
+                <p>We know your code is extremely important to you and your business and we&#8217;re very protective of it. After all, GitHub&#8217;s code is hosted on GitHub, too!</p>
+
+<h2 id='physical_security'>Physical Security</h2>
+
+<ul>
+<li>Data center access limited to Rackspace data center technicians</li>
+
+<li>Biometric scanning for controlled data center access</li>
+
+<li>Security camera monitoring at all data center locations</li>
+
+<li>24x7 onsite staff provides additional protection against unauthorized entry</li>
+
+<li>Unmarked facilities to help maintain low profile</li>
+
+<li>Physical security audited by an independent firm</li>
+</ul>
+
+<h2 id='system_security'>System Security</h2>
+
+<ul>
+<li>System installation using hardened, patched OS</li>
+
+<li>System patching configured by Rackspace to provide ongoing protection from exploits</li>
+
+<li>Dedicated firewall and VPN services to help block unauthorized system access</li>
+
+<li>Data protection with Rackspace managed backup solutions</li>
+
+<li>Dedicated intrusion detection devices to provide an additional layer of protection against unauthorized system access</li>
+
+<li>Distributed Denial of Service (DDoS) mitigation services based on Rackspace PrevenTier system</li>
+
+<li>Risk assessment and security consultation by Rackspace professional services teams</li>
+</ul>
+
+<h2 id='operational_security'>Operational Security</h2>
+
+<ul>
+<li>ISO17799-based policies and procedures, regularly reviewed as part of the Rackspace SAS70 Type II audit process</li>
+
+<li>Systems access logged and tracked for auditing purposes</li>
+
+<li>Secure document-destruction policies for all sensitive information</li>
+
+<li>Fully documented change-management procedures</li>
+
+<li>Independently audited disaster recovery and business continuity plans in place for Rackspace headquarters and support services</li>
+</ul>
+
+<h2 id='software_security'>Software Security</h2>
+
+<p>In addition to Rackspace&#8217;s system monitoring, we also employ a team of 24/7/365 server specialists at <a href='http://www.anchor.com.au/dedicated-hosting/dedicated-support.py'>Anchor Hosting</a> to keep our software and its dependencies up to date eliminating potential security vulnerabilities. They have also setup a wide range of monitoring solutions for preventing and eliminating attacks to the site.</p>
+
+<h2 id='communications'>Communications</h2>
+
+<p>All private data exchanged with GitHub is always transmitted over SSL (which is why your dashboard is served over HTTPS, for instance). All pushing and pulling of private data is done over SSH authenticated with keys, not passwords.</p>
+
+<p>The SSH login credentials used to push and pull can not be used to access a shell or the filesystem. All users are virtual (meaning they have no user account on our machines) and are access controlled through the peer reviewed, open source git-shell.</p>
+
+<h2 id='file_system_and_backups'>File system and backups</h2>
+
+<p>Every piece of hardware we use has an identical copy ready and waiting for an immediate hot-swap in case of hardware or software failure. Every line of code we store is saved on a minimum of three different servers, including an off-site backup just in case a meteor ever hits the Rackspace datacenter (we&#8217;ll keep our fingers crossed that doesn&#8217;t happen). We do not retroactively remove repositories from backups when deleted by the user, as we may need to restore the repo for the user if it was removed accidentally.</p>
+
+<p>We do not encrypt repositories on disk because it would not be any more secure: the website and git back-end would need to decrypt the repositories on demand, slowing down response times. Any user with shell access to the file system would have access to the decryption routine, thus negating any security it provides. Therefore, we focus on making our machines and network as secure as possible.</p>
+
+<h2 id='employee_access'>Employee access</h2>
+
+<p>No GitHub employees ever access private repositories unless required to for support reasons. Staff working directly in the file store access the compressed Git database, your code is never present as plaintext files like it would be in a local clone. Support staff may log into your account to access settings related to your support issue. In rare cases staff may need to pull a clone of your code, this will only be done with your consent. Support staff does not have direct access to clone any repo, he will need to temporarily attach his SSH key to your account to pull a clone. When working a support issue we do our best to respect your privacy as much as possible, we only access the files and settings needed to resolve your issue. All cloned repos are deleted as soon as the support issue has been resolved.</p>
+
+<h2 id='maintaining_security'>Maintaining security</h2>
+
+<p>We protect your login from brute force attacks with rate limiting. All passwords are filtered from all our logs and encrypted. Login information is always sent over SSL.</p>
+
+<p>We keep a security consultant on retainer to help identify and prevent new attack vectors. We always test new features in order to cut out potential attacks, such as XSS-protecting wikis, and ensuring that Pages cannot access cookies.</p>
+
+<p>In July 2010 we contracted <a href='http://www.ngenuity-is.com/'>nGenuity Information Security</a>, an acclaimed security firm, to perform a week long penetration test of GitHub. We are committed to ongoing audits from reputable third parties such as nGenuity.</p>
+
+<p>We&#8217;re extremely concerned and active about security, but we&#8217;re aware that many companies are not comfortable hosting code outside their firewall. For these companies we offer our <a href='http://fi.github.com/'>Firewall Install</a>, a version of GitHub that can be installed to a server within the company&#8217;s network.</p>
+
+<h2 id='credit_card_safety'>Credit card safety</h2>
+
+<p>When you sign up for a paid account on GitHub, we do not store any of your card information on our servers. It&#8217;s handed off to <a href='http://braintreepaymentsolutions.com'>Braintree Payment Solutions</a>, a company dedicated to storing your sensitive data on <a href='http://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard'>PCI-Compliant</a> servers.</p>
+
+<h2 id='contact_us'>Contact Us</h2>
+
+<p>Have a question, concern, or comment about GitHub security? Please email <a href='mailto:support@github.com'>&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#105;&#116;&#104;&#117;&#098;&#046;&#099;&#111;&#109;</a> for general inquiries and <a href='mailto:security@github.com'>&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#103;&#105;&#116;&#104;&#117;&#098;&#046;&#099;&#111;&#109;</a> for emergencies.</p>
+
+<h2 id='need_to_report_something'>Need to report something?</h2>
+
+<p>Please email us immediately at <a href='mailto:security@github.com'>&#115;&#101;&#099;&#117;&#114;&#105;&#116;&#121;&#064;&#103;&#105;&#116;&#104;&#117;&#098;&#046;&#099;&#111;&#109;</a>, this will go directly to one or more of the GitHub founders and will receive our full attention. If we don&#8217;t respond immediately, there&#8217;s a good chance we&#8217;re trying to fix it first.</p>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li><a href="/post-receive-hooks" id="collaborating">Post-Receive Hooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li>GitHub Security</li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

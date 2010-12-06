@@ -1,0 +1,456 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Help.GitHub - Post-Receive Hooks</title>
+    <link href="http://github.com/stylesheets/bundle_common.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="http://github.com/stylesheets/bundle_github.css" media="screen" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="stylesheet" href="/css/print.css" type="text/css" media="print">
+  </head>
+
+  <body>
+    
+      
+        <script type="text/javascript">var main_category = "collaborating"</script>
+      
+    
+    <div id="main">
+      <div id="header" class="basic">
+        <div class="site">
+          <div class="logo boring">
+            <a href="/"><img src="/images/help.github.png" alt="github learn logo" /></a>
+          </div>
+          <div class="topsearch">
+            <ul class="nav logged_out">
+              <li><a href="http://gitref.org/">Git Reference</a></li>
+              <li><a href="http://github.com/github/help.github.com#readme">Contribute</a></li>
+              <li><a href="http://support.github.com/">Support</a></li>
+              <li><a href="http://github.com/">Back to GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="site">
+        <div id="guides">
+          <div class="guide">
+            <div class="main">
+              <h1>Post-Receive Hooks</h1>
+
+              <div class="wikistyle">
+                <p><em>For help testing webhooks, see <a href='/testing-webhooks'>this guide</a></em></p>
+
+<p>If you supply a post-receive URL, GitHub will POST to that URL when someone uses <code>git push</code> on that repository.</p>
+
+<p><img src='http://img.skitch.com/20100620-r8st7468q7q5waf3y85hmpwtqs.png' alt='' /></p>
+
+<p><img src='http://img.skitch.com/20100620-br6dw5iiyk2643fahkqbi54h36.png' alt='' /></p>
+
+<p>What we&#8217;ll send is JSON containing information about the push and the commits involved.</p>
+
+<p>Here&#8217;s the template we use in Ruby to generate the JSON:</p>
+<div class='highlight'><pre><code class='ruby'><span class='p'>{</span>
+  <span class='ss'>:before</span>     <span class='o'>=&gt;</span> <span class='n'>before</span><span class='p'>,</span>
+  <span class='ss'>:after</span>      <span class='o'>=&gt;</span> <span class='n'>after</span><span class='p'>,</span>
+  <span class='ss'>:ref</span>        <span class='o'>=&gt;</span> <span class='n'>ref</span><span class='p'>,</span>
+  <span class='ss'>:commits</span>    <span class='o'>=&gt;</span> <span class='o'>[</span><span class='p'>{</span>
+    <span class='ss'>:id</span>        <span class='o'>=&gt;</span> <span class='n'>commit</span><span class='o'>.</span><span class='n'>id</span><span class='p'>,</span>
+    <span class='ss'>:message</span>   <span class='o'>=&gt;</span> <span class='n'>commit</span><span class='o'>.</span><span class='n'>message</span><span class='p'>,</span>
+    <span class='ss'>:timestamp</span> <span class='o'>=&gt;</span> <span class='n'>commit</span><span class='o'>.</span><span class='n'>committed_date</span><span class='o'>.</span><span class='n'>xmlschema</span><span class='p'>,</span>
+    <span class='ss'>:url</span>       <span class='o'>=&gt;</span> <span class='n'>commit_url</span><span class='p'>,</span>
+    <span class='ss'>:added</span>     <span class='o'>=&gt;</span> <span class='n'>array_of_added_paths</span><span class='p'>,</span>
+    <span class='ss'>:removed</span>   <span class='o'>=&gt;</span> <span class='n'>array_of_removed_paths</span><span class='p'>,</span>
+    <span class='ss'>:modified</span>  <span class='o'>=&gt;</span> <span class='n'>array_of_modified_paths</span><span class='p'>,</span>
+    <span class='ss'>:author</span>    <span class='o'>=&gt;</span> <span class='p'>{</span>
+      <span class='ss'>:name</span>  <span class='o'>=&gt;</span> <span class='n'>commit</span><span class='o'>.</span><span class='n'>author</span><span class='o'>.</span><span class='n'>name</span><span class='p'>,</span>
+      <span class='ss'>:email</span> <span class='o'>=&gt;</span> <span class='n'>commit</span><span class='o'>.</span><span class='n'>author</span><span class='o'>.</span><span class='n'>email</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span><span class='o'>]</span><span class='p'>,</span>
+  <span class='ss'>:repository</span> <span class='o'>=&gt;</span> <span class='p'>{</span>
+    <span class='ss'>:name</span>        <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>name</span><span class='p'>,</span>
+    <span class='ss'>:url</span>         <span class='o'>=&gt;</span> <span class='n'>repo_url</span><span class='p'>,</span>
+    <span class='ss'>:pledgie</span>     <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>pledgie</span><span class='o'>.</span><span class='n'>id</span><span class='p'>,</span>
+    <span class='ss'>:description</span> <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>description</span><span class='p'>,</span>
+    <span class='ss'>:homepage</span>    <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>homepage</span><span class='p'>,</span>
+    <span class='ss'>:watchers</span>    <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>watchers</span><span class='o'>.</span><span class='n'>size</span><span class='p'>,</span>
+    <span class='ss'>:forks</span>       <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>forks</span><span class='o'>.</span><span class='n'>size</span><span class='p'>,</span>
+    <span class='ss'>:private</span>     <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>private?</span><span class='p'>,</span>
+    <span class='ss'>:owner</span> <span class='o'>=&gt;</span> <span class='p'>{</span>
+      <span class='ss'>:name</span>  <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>owner</span><span class='o'>.</span><span class='n'>login</span><span class='p'>,</span>
+      <span class='ss'>:email</span> <span class='o'>=&gt;</span> <span class='n'>repository</span><span class='o'>.</span><span class='n'>owner</span><span class='o'>.</span><span class='n'>email</span>
+    <span class='p'>}</span>
+  <span class='p'>}</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>This is sent as a POST with a single parameter: &#8216;payload&#8217;</p>
+
+<p>So, for example, you&#8217;d do something like this in a <a href='http://sinatra.rubyforge.org/'>Sinatra</a> server:</p>
+<div class='highlight'><pre><code class='ruby'><span class='n'>post</span> <span class='s1'>&#39;/&#39;</span> <span class='k'>do</span>
+  <span class='n'>push</span> <span class='o'>=</span> <span class='no'>JSON</span><span class='o'>.</span><span class='n'>parse</span><span class='p'>(</span><span class='n'>params</span><span class='o'>[</span><span class='ss'>:payload</span><span class='o'>]</span><span class='p'>)</span>
+  <span class='s2'>&quot;I got some JSON: </span><span class='si'>#{</span><span class='n'>push</span><span class='o'>.</span><span class='n'>inspect</span><span class='si'>}</span><span class='s2'>&quot;</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
+<p>The <code>commits</code> array is ordered with the most recent commit as the first element. The last element, therefor, is the oldest commit.</p>
+
+<p>Here&#8217;s an example payload:</p>
+<div class='highlight'><pre><code class='javascript'><span class='p'>{</span>
+  <span class='s2'>&quot;before&quot;</span><span class='o'>:</span> <span class='s2'>&quot;5aef35982fb2d34e9d9d4502f6ede1072793222d&quot;</span><span class='p'>,</span>
+  <span class='s2'>&quot;repository&quot;</span><span class='o'>:</span> <span class='p'>{</span>
+    <span class='s2'>&quot;url&quot;</span><span class='o'>:</span> <span class='s2'>&quot;http://github.com/defunkt/github&quot;</span><span class='p'>,</span>
+    <span class='s2'>&quot;name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;github&quot;</span><span class='p'>,</span>
+    <span class='s2'>&quot;description&quot;</span><span class='o'>:</span> <span class='s2'>&quot;You&#39;re lookin&#39; at it.&quot;</span><span class='p'>,</span>
+    <span class='s2'>&quot;watchers&quot;</span><span class='o'>:</span> <span class='mi'>5</span><span class='p'>,</span>
+    <span class='s2'>&quot;forks&quot;</span><span class='o'>:</span> <span class='mi'>2</span><span class='p'>,</span>
+    <span class='s2'>&quot;private&quot;</span><span class='o'>:</span> <span class='mi'>1</span><span class='p'>,</span>
+    <span class='s2'>&quot;owner&quot;</span><span class='o'>:</span> <span class='p'>{</span>
+      <span class='s2'>&quot;email&quot;</span><span class='o'>:</span> <span class='s2'>&quot;chris@ozmm.org&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;defunkt&quot;</span>
+    <span class='p'>}</span>
+  <span class='p'>},</span>
+  <span class='s2'>&quot;commits&quot;</span><span class='o'>:</span> <span class='p'>[</span>
+    <span class='p'>{</span>
+      <span class='s2'>&quot;id&quot;</span><span class='o'>:</span> <span class='s2'>&quot;41a212ee83ca127e3c8cf465891ab7216a705f59&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;url&quot;</span><span class='o'>:</span> <span class='s2'>&quot;http://github.com/defunkt/github/commit/41a212ee83ca127e3c8cf465891ab7216a705f59&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;author&quot;</span><span class='o'>:</span> <span class='p'>{</span>
+        <span class='s2'>&quot;email&quot;</span><span class='o'>:</span> <span class='s2'>&quot;chris@ozmm.org&quot;</span><span class='p'>,</span>
+        <span class='s2'>&quot;name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;Chris Wanstrath&quot;</span>
+      <span class='p'>},</span>
+      <span class='s2'>&quot;message&quot;</span><span class='o'>:</span> <span class='s2'>&quot;okay i give in&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;timestamp&quot;</span><span class='o'>:</span> <span class='s2'>&quot;2008-02-15T14:57:17-08:00&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;added&quot;</span><span class='o'>:</span> <span class='p'>[</span><span class='s2'>&quot;filepath.rb&quot;</span><span class='p'>]</span>
+    <span class='p'>},</span>
+    <span class='p'>{</span>
+      <span class='s2'>&quot;id&quot;</span><span class='o'>:</span> <span class='s2'>&quot;de8251ff97ee194a289832576287d6f8ad74e3d0&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;url&quot;</span><span class='o'>:</span> <span class='s2'>&quot;http://github.com/defunkt/github/commit/de8251ff97ee194a289832576287d6f8ad74e3d0&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;author&quot;</span><span class='o'>:</span> <span class='p'>{</span>
+        <span class='s2'>&quot;email&quot;</span><span class='o'>:</span> <span class='s2'>&quot;chris@ozmm.org&quot;</span><span class='p'>,</span>
+        <span class='s2'>&quot;name&quot;</span><span class='o'>:</span> <span class='s2'>&quot;Chris Wanstrath&quot;</span>
+      <span class='p'>},</span>
+      <span class='s2'>&quot;message&quot;</span><span class='o'>:</span> <span class='s2'>&quot;update pricing a tad&quot;</span><span class='p'>,</span>
+      <span class='s2'>&quot;timestamp&quot;</span><span class='o'>:</span> <span class='s2'>&quot;2008-02-15T14:36:34-08:00&quot;</span>
+    <span class='p'>}</span>
+  <span class='p'>],</span>
+  <span class='s2'>&quot;after&quot;</span><span class='o'>:</span> <span class='s2'>&quot;de8251ff97ee194a289832576287d6f8ad74e3d0&quot;</span><span class='p'>,</span>
+  <span class='s2'>&quot;ref&quot;</span><span class='o'>:</span> <span class='s2'>&quot;refs/heads/master&quot;</span>
+<span class='p'>}</span>
+</code></pre>
+</div>
+<p>For more information on this technique, see the <a href='http://webhooks.pbwiki.com/'>Web Hooks Wiki</a>.</p>
+
+<h2 id='links'>Links</h2>
+
+<ul>
+<li><a href='http://github.com/raggi/github_post_receive_server/'>raggi/github_post_receive_server</a> &#8211; A template Rack server</li>
+
+<li><a href='http://github.com/jnewland/github-campfire/'>jnewland/github-campfire</a></li>
+
+<li><a href='http://github.com/webs/irccat'>webs/irccat</a></li>
+
+<li><a href='http://github.com/jnunemaker/github-twitter/'>jnunemaker/github-twitter</a></li>
+</ul>
+              </div>
+            </div>
+
+            <div class="sidebar">
+              
+                <h3>Setup</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-installation-redirect" id="setup">Installing git</a></li>
+                      
+                    
+                      
+                        <li><a href="/key-setup-redirect" id="setup">Generating SSH keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="setup">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-email-settings" id="setup">Setting user name, email and GitHub token</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="setup">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="setup">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="setup">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/svn-importing" id="setup">Importing from Subversion</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Troubleshooting</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/troubleshooting-common-issues" id="troubleshooting">Common issues and questions</a></li>
+                      
+                    
+                      
+                        <li><a href="/troubleshooting-ssh" id="troubleshooting">Troubleshooting SSH issues</a></li>
+                      
+                    
+                      
+                        <li><a href="/egit-corruption" id="troubleshooting">Fixing egit corruption</a></li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="troubleshooting">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/firewalls-and-proxies" id="troubleshooting">Dealing with firewalls and proxies</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Repos</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/creating-a-repo" id="repos">Creating a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/deleting-a-repo" id="repos">Deleting a repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/moving-a-repo" id="repos">Moving a repo</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Collaborating</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/forking" id="collaborating">Forking a project</a></li>
+                      
+                    
+                      
+                        <li>Post-Receive Hooks</li>
+                      
+                    
+                      
+                        <li><a href="/testing-webhooks" id="collaborating">Testing webhooks</a></li>
+                      
+                    
+                      
+                        <li><a href="/managing-clients" id="collaborating">Managing multiple clients</a></li>
+                      
+                    
+                      
+                        <li><a href="/pull-requests" id="collaborating">Sending pull requests</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Everyday git</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/remotes" id="everyday_git">Working with remotes</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-ignore" id="everyday_git">Ignoring files</a></li>
+                      
+                    
+                      
+                        <li><a href="/rebase" id="everyday_git">All your rebase</a></li>
+                      
+                    
+                      
+                        <li><a href="/git-cheat-sheets" id="everyday_git">Git cheat sheets</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Git ninjutsu</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/removing-sensitive-data" id="git_ninjutsu">Removing sensitive data</a></li>
+                      
+                    
+                      
+                        <li><a href="/splitting-a-subpath-to-a-new-repo" id="git_ninjutsu">Splitting a subpath out into a new repo</a></li>
+                      
+                    
+                      
+                        <li><a href="/subtree-merge" id="git_ninjutsu">Working with subtree merge</a></li>
+                      
+                    
+                      
+                        <li><a href="/changing-author-info" id="git_ninjutsu">Changing author info</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Deploying</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/deploy-keys" id="deploying">Understanding deploy keys</a></li>
+                      
+                    
+                      
+                        <li><a href="/capistrano" id="deploying">Deploying with Capistrano</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Mac</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/mac-git-installation" id="mac">Installing git (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/mac-key-setup" id="mac">Generating SSH keys (OSX)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="mac">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="mac">Dealing with line endings</a></li>
+                      
+                    
+                      
+                        <li><a href="/textmate" id="mac">Textmate</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Windows</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/win-git-installation" id="windows">Installing git (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/msysgit-key-setup" id="windows">Generating SSH keys (Win/msysgit)</a></li>
+                      
+                    
+                      
+                        <li><a href="/working-with-key-passphrases" id="windows">Working with SSH key passphrases</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="windows">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Linux</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/linux-git-installation" id="linux">Installing git (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/linux-key-setup" id="linux">Generating SSH keys (Linux)</a></li>
+                      
+                    
+                      
+                        <li><a href="/dealing-with-lineendings" id="linux">Dealing with line endings</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Other</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/git-html-help" id="other">Installing Git HTML help</a></li>
+                      
+                    
+                      
+                        <li><a href="/userscripts-and-bookmarklets" id="other">Userscripts and Bookmarklets</a></li>
+                      
+                    
+                      
+                        <li><a href="/api" id="other">GitHub API</a></li>
+                      
+                    
+                      
+                        <li><a href="/multiple-keys" id="other">Multiple SSH keys</a></li>
+                      
+                    
+                  </ul>
+              
+                <h3>Site policy</h3>
+                  <ul id="categories">
+                    
+                      
+                        <li><a href="/security" id="site_policy">GitHub Security</a></li>
+                      
+                    
+                      
+                        <li><a href="/privacy" id="site_policy">GitHub Privacy Policy</a></li>
+                      
+                    
+                      
+                        <li><a href="/terms" id="site_policy">GitHub Terms of Service</a></li>
+                      
+                    
+                      
+                        <li><a href="/dmca" id="site_policy">DMCA Takedown</a></li>
+                      
+                    
+                  </ul>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <div id="footer">
+      <div class="site">
+
+        <div class="info">
+          <div class="links">
+            <a href="http://github.com/blog"><b>Blog</b></a> |
+            <a href="http://support.github.com/">Support</a> |
+            <a href="http://github.com/training">Training</a> |
+            <a href="http://github.com/contact">Contact</a> |
+            <a href="http://develop.github.com">API</a> |
+            <a href="http://status.github.com">Status</a> |
+            <a href="http://twitter.com/github">Twitter</a> |
+            <a href="http://gitref.org">Learn</a> |
+            <a href="http://github.com/security">Security</a>
+          </div>
+          <div class="company">
+           &copy;
+            2010
+            GitHub Inc.
+            All rights reserved.
+           | <a href="http://github.com/site/terms">Terms of Service</a> | <a href="http://github.com/site/privacy">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
