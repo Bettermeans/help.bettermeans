@@ -1,0 +1,92 @@
+---
+layout: default
+title: Retrospectives
+description: Guide to understanding and participating in retrospectives
+categories: guides
+main_category: guides
+---
+
+Retrospectives are a form of 360 assessment, that allows credit to be awarded by your peers and your own self-assessment. This is an opportunity to be fairly compensated for your contribution.
+
+When does a retrospective happen?
+---------------------------------
+
+When a project workstream is using credits, there will be retrospectives. A retrospective happens when 3000 credits worth of work has been completed within a project workstream, or after 20 days have passed.
+
+Who is included in a retrospective?
+-----------------------------------
+
+Everyone that contributed to the work items is included in the retrospective and has the opportunity to cast their vote. This includes everyone who has created, voted, commented on, or worked on the work item. With every voice heard and calculated fairly into the final outcome, we are offering a more democratic and more accurate form of assessment and compensation. You are no longer working for one boss, but instead working fairly with a team.
+
+Retrospective How To
+--------------------
+
+Now that you have the basics of what a retrospective is, allow us to walk you through how you can participate in a retrospective.
+When you are part of a retrospective you will receive a notification, from the notification page you can click "Participate" and the retrospective will open. 
+
+![](/images/retro-note-f.png)
+
+There is lots of information available in the retrospective to help you make you assessment.
+
+![](/images/retro1-f.png)
+
+Look at all of the completed items. You can learn more about each item by clicking on the title of the item and a lightbox will open allowing you to see the history. If you are less familiar with the work done, this is strongly encouraged since this will give you a better sense of who did what. 
+
+![](/images/retro5-f.png)
+
+Also to the right you will see charts with information. These charts provide a simple breakdown of who created the item, commented, voted and completed the work.
+
+Credits pie chart - this is an indication of who completed the work. But note that the system automatically distributes the credits equally among team members who worked together on an item, which we all know is not always true, so be sure to look into the items' history.
+Ideas pie chart - this shows how many work items each person created.
+Comments pie chart - this shows how many comments each person contributed - remember to check the quality of the comments.
+Votes pie chart - this show how many votes each person cast on the items
+
+_Remember that numbers are not everything, and you should look at the history of items to get a true sense of who got the work done._
+
+![](/images/retro4-f.png)
+
+
+Once you have a good idea of the work done, give your best assessment of what percentage you think each person contributed, by using the slider next to each person's name.
+
+You also have a chance to say how sure you are of your assessment by using the slider at the bottom. This is a helpful tool for when you are not completely sure but still want to participate. If you are less certain, your votes will count for less, however if you are way off, your self assessment score will also not be hit as hard since you are being honest about your uncertainty.
+
+![](/images/retro3-f.png)
+
+Once you have
+
+* looked carefully at the work done
+* indicated the percentage you think each person contributed
+* expressed how certain you are of your assessment
+
+Click save. And you have just completed the retrospective. And now you get to wait for the final outcome. oh boy, oh boy.
+
+For how long is a retrospective open?
+-------------------------------------
+
+A retrospective is open for 3 days.
+
+How are the final results calculated?
+-------------------------------------
+
+Each person's assessment of their team members is averaged and then distributed across 100%. This means that your compensation is based on what everyone ELSE has given you. Your self assessment is not directly calculated into the average. However indirectly your self assessment does affect the outcome since everyone else's percentage includes your assessment. For example if you gave yourself 90% and the other 2 people 5% and 5%, their averages will be brought down by the 5%, but your 90% will not be calculated in your own final compensation.  In addition, all of your assessments are weighted based on how sure you are of your vote, as indicated with the bottom slider.
+
+Take this retrospective for example (this is what you will see once the retrospective is done).
+
+![](/images/retro-result-f.png)
+
+In this case, Shereef, Sam and I (Adele) cast votes.
+
+Your Assessment is the votes that you cast on who contributed what.
+Team's Assessment is the raw averages of everyone's assessment of each other
+Final Distribution is what it equaled out to when distributed across 100%
+
+The Accuracy is a comparison of what I gave myself relative to what others gave me. In this case I over-rated myself by 6% and either under or over - rated others by 12%. On the other hand, Shereef under-rated himself by 8% relative to what we rated him. Sam was the most on target, only over-rating himself by 2%, however he under or over rated others by 16%.
+
+Over time people will develop a self-assessment score which is an average of all of these individual retrospective scores. You can see you own self-assessment score by visiting your profile page. Similarly, you can see other people's score by clicking on their name from anywhere in the platform and visiting their profile.
+
+From using this system for a while, we can say that it really does feel more fair. And also, over time you get better and more clear on levels of contribution. The first few retrospectives for a team will feel new and different and may have biases, but over time you will all learn to get comfortable in this exercise which ultimately results in more fair compensation.
+
+Still have questions? 
+---------------------
+
+We are working to constantly improve this site, therefore _please_ email us with your additional questions at <a href="mailto:support@bettermeans.com">support@bettermeans.com</a>

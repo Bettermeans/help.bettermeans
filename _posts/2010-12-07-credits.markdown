@@ -1,0 +1,56 @@
+---
+layout: default
+title: Credits
+description: Credits frequently asked questions
+categories: faq popular
+main_category: faq
+---
+
+Credits are a way of tracking contribution to a project. When credits are activated in a project workstream, credits are then used to track, record and make transparent the efforts of each team member. Work items are estimated in credits and when work is completed and a retrospective conducted, credits are then awarded to participants based on their peer evaluation.
+
+![](/images/credits7-f.png)
+
+Credits can also be another word for money, cash, dollar dollar bills, accounts payable OR credits can be used to see relative contribution. When representing money, credits are literally what people are paid for their work which could be in place of a typical salary. However if you do not want to pay people based on this new system, credits can also just track relative contribution of team members.
+
+Are credits optional?
+---------------------
+
+Yes, when the project workstream is created, there is an option to use credits or not.
+
+How can I know if a project workstream is using credits?
+--------------------------------------------------------
+
+When you are looking at the overview of a project workstream, if you look across the top at the tabs and you see a Credits tab, the project workstream is using credits, otherwise, the project workstream is not using credits.
+
+![](/images/credits5.png)
+
+Why would I use credits?
+------------------------
+
+Credits are an exciting new way to track the true contribution of each member. In this system, estimation is based on the group's opinion which is presumably more accurate than one boss' assessment. In addition, retrospectives make compensation based upon peer review, which is more fair than a single boss' opinion of the work. With credits, compensation can be more fair, awarding those that do great work and not rewarding those that park in jobs without earning their position. There is also a freedom in this system that allows people to contribute at the level that they are able, and be rewarded accordingly.
+
+How can I use credits in my project?
+------------------------------------
+
+When you create a project workstream, just check the box that says credits. Only admins have the ability to access this.
+
+![](/images/new-workstream1-f.png)
+
+Can I change a project workstream from using credits to not using credits? Or vice versa?
+-----------------------------------------------------------------------------------------
+
+Yes, as the creator and administrator of a project workstream you can change from using credits to not using credits. However this is an important decision and this admin power should be used respectfully. Also note that if you switch, everything must be re-estimated, since the former estimations were based on a different system. To change this, go to the settings tab, click on the Modules tab, and un-check the credits box.
+
+![](/images/credit-options6-f.png)
+
+What does it mean to "deactivate" Credits?
+------------------------------------------
+
+If you deactivate your credits that merely means you are taking them out of the payment queue. You have the option to activate your credits whenever you choose and those credits are then put back in the line where they were before. The reason you might do this would be to open the way for others behind you to be paid if you have that flexibility. The other reason you might do that would be to invest in the enterprise, but that is a longer story that we will save for later.
+
+What is the difference between "All Credits" and "Active Credits" and "My Credits"
+----------------------------------------------------------------------------------
+
+All Credits include every credit that has been issued for the enterprise to date, regardless of whether anyone has deactivated their credits.
+Active Credits are ONLY the credits that are active, which no one has de-activated. If you are waiting to be paid, this is the line you are waiting in.
+My Credits are all the credits that you have earned, and it is under this list where you can Deactivate and Activate you own credits. 
