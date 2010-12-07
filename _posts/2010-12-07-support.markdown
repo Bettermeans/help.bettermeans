@@ -1,0 +1,37 @@
+---
+layout: default
+title: Support
+description: Get help solving your problems
+categories: other
+main_category: other
+---
+
+If you are having problems with the BetterMeans website, here are some potential steps to take:
+
+Find answers
+------------
+
+Look around this help site to see if you can get your questions answered.
+
+Still can't find the answer? 
+Try this forum: <a href="https://secure.bettermeans.com/projects/21/boards/39">Beta Customers Discussion</a>
+
+Found a bug?
+------------
+
+If you feel that you have found a bug please report it on our <a href="http://bettermeans.com/projects/2/dashboard">workstream</a>.
+
+To log the bug simply:
+* follow <a href="http://bettermeans.com/projects/2/dashboard">this link to the platform workstream</a>
+* use the search function to check if someone has already logged this bug, if no on has then...
+* create a new item and provide as much information in the description as possible, such as
+  * the browser and version that you are using
+  * screenshots of the problem
+  * exact steps for reproducing the problem
+
+Still no answers?
+-----------------
+If you have a question that you feel is unanswered by this site,
+
+* please email us at <a href="mailto:support@bettermeans.com">support@bettermeans.com</a>
+* or call us and we'll do our best to help you out, 510-457-1670 (please keep in mind this is not 24/7 customer support, we don't have that yet, you are just calling us, normal folks, but we really do want to help you if we can)

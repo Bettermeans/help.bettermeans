@@ -1,0 +1,105 @@
+---
+layout: default
+title: Motions
+description: Guide to motions
+categories: guides popular
+main_category: guides
+---
+
+Motions are a way to make big organizational decisions together. Unlike work items, motions are decisions that must be made. 
+
+It is important for team members to vote on motions since they are organizational decision, but different motions require different level of approval from the team.
+
+Motion uses
+-----------
+
+Motions can be used for such things as:
+
+* Nominating a new member
+* Nominating a core team member
+* Revised mission statement
+* New strategic direction
+* and more...
+
+Motion Types
+------------
+
+![](/images/motion_types_chart.png)
+
+Starting a motion
+=================
+
+First 
+-----
+
+Go to the Overview page for the project workstream and click on "New Motion" from the right navigation menu.
+
+![](/images/motion.png)
+
+Second
+------
+
+From the motions page you will have a drop-down menu of options of different types of motions, below is a chart explaining each type of motion. Remember provide as much as information as possible in the description, present your argument here.
+
+![](/images/motion-dropdown-f.png)
+
+Third
+-----
+
+Once the motion is created, you will have an opportunity to vote, as will others.
+
+There are 4 types of votes: 
+
+* "Agree" - agrees that the action should move forward
+* "Neutral" - indicates that attention has been given to the action but abstaining from voting one way or another 
+* "Disagree" - disagrees but will not oppose the action’s going forward
+* "Block" -opposes the action’s going forward and must propose an alternative action to address the issue (or a justification for not addressing the issue) 
+
+Another way to abstain from the vote is for participants to simply not participate. However, it is more helpful to cast a ‘neutral’ vote than to abstain, since this allows the team to gauge the general feeling of the community if the proposal is controversial.
+
+The entire community, from interested user to the most active Core Team Member, has a vote. The enterprise encourages everyone to express their opinions in all discussion and all votes. However, only Members of the enterprise and/or Core Team Members have binding votes for the purposes of decision making. It is therefore their responsibility to ensure that the opinions of the entire community are considered. While only Members and Core Team Members have a binding vote, a well-justified ‘block’ from a non-Member must be considered by the community, and if appropriate, supported by a binding ‘block’.
+
+A ‘block’, when cast by a Member or Core Team Member, essentially becomes a ‘veto’.
+
+When a motion receives a ‘block’, it is the responsibility of the community as a whole to address the objection. Such discussion will continue until the objection is either rescinded, overruled (in the case of a non-binding block) or the proposal itself is altered in order to achieve consensus (possibly by withdrawing it altogether).
+
+<strong>In summary:</strong>
+
+* Those who don’t agree with the proposal and feel it would be detrimental to the enterprise if pursued should vote ‘block’. However, they will be expected to submit and defend a counter-proposal.
+* Those who don’t agree, don’t find it detrimental, and don’t have a better idea should vote ‘disagree’.
+* Those who agree should vote ‘agree’.
+* Those who do not care either way or who find themselves on the fence should vote ‘neutral’.
+
+
+Fourth
+------
+
+Depending on the motion type, different levels of approval are needed. The chart above indicates the vote type needed for each motion.
+
+Different actions require different types of approval, ranging from lazy consensus to a majority decision by the Core Team. These are summarized below. 
+
+1. Lazy consensus: Immediate. 
+An action with lazy consensus is implicitly allowed, unless a binding ‘block’ vote is received. Depending on the type of action, a vote will then be called. Note that even though a binding ‘block’ is required to prevent the action, anyone is is free to cast a ‘block’ vote with supporting argument. Members are expected to evaluate the argument and, if necessary, support it with a binding ‘block’.
+
+2. Lazy majority: 72 hours. 
+A lazy majority vote requires more binding ‘agree’ votes than binding ‘disagree’ votes and no vetoes (binding ‘block’ votes). Once 72 hours have passed, the decision moves in the direction of the majority. Naturally if an actual majority of Members vote before the 72 hours are up, the decision moves in that direction immediately. Sometimes a lazy majority is tied with a vote threshold. This allows for decisions to be made quicker than 72 hours if enough Members vote. If the vote threshold is reached before the 72 hours are up, the decision moves in the direction of the majority.
+
+3. Unanimous consensus: 120 hours. 
+All of the binding votes that are cast are to be ‘agree’ and there can be no ‘disagree’ votes or vetoes (binding ‘block’ votes)
+Here are examples of the different votes, including motions and the type of approval needed (also indicated above for motions)
+
+Motion Breakdown
+----------------
+
+* New Contributor: Lazy consensus of any Member
+* Work Item moving to open queue and Work Item acceptance is dependent on the estimated value of that item, click here for more detail: Lazy consensus of Members
+* New Project Workstream: Lazy majority of Members
+* New Member: Unanimous approval of Core Team
+* Member removal: Unanimous consensus of Core Team
+* New Core Team Member: Unanimous consensus of Members
+* Core Team Member removal: Unanimous consensus of Members
+
+Still have questions? 
+---------------------
+
+We are working to constantly improve this site, therefore _please_ email us with your additional questions at <a href="mailto:support@bettermeans.com">support@bettermeans.com</a>
