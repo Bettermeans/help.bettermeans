@@ -13,18 +13,19 @@ Unlike other project management tools that are based on tracking work in a comma
 The bettermeans platform allows you to start your next project, run it as a democracy and make your impact.
 
 Videos
-------
+======
 
 Introduction to bettermeans
+---------------------------
 
 <object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/MAlnMWlvw9g?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/MAlnMWlvw9g?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
   
 Tour of the platform
-
+--------------------
 <object width="640" height="385"><param name="movie" value="http://www.youtube.com/v/0wJAf229YUs?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/0wJAf229YUs?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="385"></embed></object>
   
 How does this fit into the larger picture?
-
+------------------------------------------
 <object width="640" height="390"><param name="movie" value="http://www.youtube.com/v/OZaxoRi6IlE&hl=en_US&feature=player_embedded&version=3"></param><param name="allowFullScreen" value="true"></param><param name="allowScriptAccess" value="always"></param><embed src="http://www.youtube.com/v/OZaxoRi6IlE&hl=en_US&feature=player_embedded&version=3" type="application/x-shockwave-flash" allowfullscreen="true" allowScriptAccess="always" width="640" height="390"></embed></object>
 
 Collective, peer-to-peer action
