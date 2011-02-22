@@ -27,7 +27,7 @@ sidebar_cats:
       <div id="header" class="basic">
         <div class="site">
           <div class="logo boring">
-            <a href="/"><img src="/images/help.github.png" alt="bettermeans learn logo" /></a>
+            <a href="/"><img src="/images/header_logo.png" alt="bettermeans learn logo" /></a>
           </div>
           <div class="topsearch">
             <ul class="nav logged_out">
@@ -93,5 +93,18 @@ sidebar_cats:
         </div>
       </div>
     </div>
+    <div id="cse" style="width: 100%;">Loading</div>
+    <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+    <script type="text/javascript">
+      google.load('search', '1', {language : 'en'});
+      google.setOnLoadCallback(function() {
+        var customSearchControl = new google.search.CustomSearchControl('011443702072909380326:nb3ft_dmws0');
+        customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+        customSearchControl.draw('cse');
+      }, true);
+    </script>
+    <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+    
   </body>
 </html>
