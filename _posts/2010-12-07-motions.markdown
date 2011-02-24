@@ -2,7 +2,7 @@
 layout: default
 title: Motions
 description: Guide to motions
-categories: guides popular
+categories: guides
 main_category: guides
 ---
 

@@ -6,7 +6,7 @@ categories: other
 main_category: other
 ---
 
-If you are having problems with the BetterMeans website, here are some potential [steps](/joining) to take:
+If you are having problems with the BetterMeans website, here are some potential steps to take:
 
 Find answers
 ------------

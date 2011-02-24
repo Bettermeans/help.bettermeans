@@ -1,0 +1,108 @@
+---
+layout: default
+title: Dashboard Key
+description: Detailed dashboard key
+categories: other
+main_category: other
+---
+
+Work Items:
+---------------------
+
+![](/images/feature_icon.png)
+Feature – A feature is the most common work item, and refers to a desired feature of something you are working on. For example if we are organizing an event together, a feature might be a great dancing band or blue invitations.
+
+![](/images/bug_icon.png) Bug – A bug is a work item in which something needs to be fixed. For example if there are edits that need to be made to an existing document or a bug in software needs to be fixed.
+
+![](/images/chore_icon.png) Chore – A chore is a work item in which a task must be completed. An example might be a list of people that need to be called or a piece of code that needs to be implemented.
+
+![](/images/gift_icon.png) Gift – A gift is an item that is created to award someone credits for a job well done. This is often used when someone has gone above and beyond in their work and the community decides to recognize and award them for it.
+
+![](/images/expense_icon.png) Expense – This is a item that is used for making decisions about expenses of the project.
+
+![](/images/recurring_icon.png) Recurring – This is a work item that is recurring, meaning that once it is completed, it will come back to the Open queue automatically.
+
+
+
+
+Estimation:
+---------------------
+
+![](/images/estimate-quest.png) Estimation needed -When you have not yet estimated an item, you will see the "Estimate?"" button and it indicates that you need to estimate the item. An item cannot move from New to Open unless someone has estimated it.
+
+![](/images/dice_No.png) Estimation needed – When you have not yet estimated an item, you will see this ? and it indicates that you need to estimate the item. You will see other people’s estimates and the overall average once you have estimated the item yourself.
+
+![](/images/dice_wait.png) "Don't Know" - When you have selected "I Don't Know" as your estimate, you will see this. An item cannot move from New to Open unless someone has estimated it, and Don't Know does not count as an estimate, therefore you may need to wait for another person to estimate for the item to move forward. 
+
+![](/images/dice_3.png) Average Complexity or Credits – If you are working in a workstream with credits, this dice is a visual representation of the number of credits that the item has been estimated at. If your workstream is volunteer or not using credits, this is merely an indication of the level of complexity. Click here for more information about estimation.
+
+
+
+
+Voting:
+---------------------
+
+![](/images/agree.png) Voting Needed – This orange button indicates that you have not yet voted on whether or not you think that this item should be completed. Once you click on this you have the flowing options: agree, neutral, against or block.
+
+![](/images/agreed.png) You have agreed to this item – this indicates that you have already voted and you agreed that this item should be completed. You can always change your vote.
+
+![](/images/neutral.png) You are neutral on this item – this indicates that you have already voted on this item and that you are neutral as to whether it gets completed. You can always change your vote.
+
+![](/images/against.png) You have voted against this item – this indicates that you have already voted and that you voted against this item. When you vote against, your vote is tallied with the rest, but you are not blocking the item from ever progressing, merely voicing your opinion. You can always change your vote.
+
+![](/images/blockcopy.png) You have blocked this item – this indicates that you have blocked this item, meaning that you strongly believe that it should never be completed. Any member can exercise this power, but they must provide a reason for blocking. If your objection to this item has been resolved, you can change your vote.
+
+![](/images/block.png) Someone has blocked this item – Regardless of how you voted, if someone else has blocked this item, you will see this. This item will not progress until the person that voted to block, changes their block.
+
+ 
+
+
+Actions:
+---------------------
+
+![](/images/start.png) This button allows you to start an item. Once you start an item, you have ownership of the item and are responsible for driving it forward and completing it, either alone or with a team. Others can join you and you can also add people to items that you own.
+
+![](/images/join.png) This button allows you to join an item and to the right is the owner of the item. You have the opportunity to join items that have already been started and are In Progress. Anyone can join an item, but the owner can also remove people from items if those people are not contributing.
+
+![](/images/finish.png) If you are working on an item you can finish it using this button. When you finish an item you must post a comment stating the outcome or deliverable.
+
+![](/images/cancelbutton.png) If enough people have voted against an item, or 30 days have passed with no activity use this button to cancel the item. Anyone can cancel an item but must give an explanation for cancellation.
+
+![](/images/giveup.png)If you are the owner of an item, but feel that you can no longer complete it, you use this button to give up on the item. Ownership will automatically transfer to the next team member to have joined, or if you were working alone, the item will move back to the Open queue.
+
+![](/images/leave.png)If you have joined an item but can no longer work on it, use this button to leave the team.
+
+![](/images/takeback.png)If you have finished an item but then realize there is more work to be done, you can use this button to put the item back In Progress.
+
+
+
+
+Priority
+---------------------
+
+![](/images/prioritycount.png) Priority Vote Needed -  This black dot indicates that you have not yet voted on the level of priority that you believe this item is. Once you click on this you will have the option to vote the priority Up, Neutral or Down
+
+![](/images/prioritydot.png) Priority Count – The black dot indicates that you have not yet voted and the number next to it is a tally of the current votes on the level of priority. Positive numbers are high priority and negative numbers are low priority, neutral votes are counted as zero.
+
+![](/images/priority2.png) 2 votes for high priority – The red indicates that you have voted high priority. The accompanying number is the tally of the priority votes, in this case 2 people have made this item a high priority.
+
+![](/images/prioritylow.png) You have voted this a low priority – this red down arrow indicates that you have voted to make this a low priority. In this case only you have voted it down since the tally is -1.
+
+![](/images/priorityneutral.png) You have voted neutral on the priority of this item – the red dot is an indicator that you have voted and in this case you voted neutral, making the priority tally 0.
+
+ 
+Voting cont:
+---------------------
+
+![](/images/accept.png) Voting Needed – This orange button indicates that you have not yet voted on whether or not you think that this item should be accepted or rejected. Once you click on this you have the flowing options: accept, neutral, reject or block.
+
+![](/images/accepted.png) You have accepted this item - this indicates that you have already accepted this item. Once enough people have accepted an item it becomes fully accepted and part of the next retrospective if the workstream is using credits.
+You are neutral on this item – this indicates that you have already voted on this item and that you are neutral on its acceptance. You can always change your vote.
+
+![](/images/rejected.png) You have rejected this item – this indicates that you have already voted and that you rejected this item. When you eject an item, your vote is tallied with the rest, but you are not blocking the item from ever being accepted, merely voicing your opinion. You can always change your vote.
+
+![](/images/blockcopy.png) You have blocked this item – this indicates that you have blocked the acceptance of this item, meaning that you do not think the work has been done properly and you do not want the person to be compensated for this work. Any member can exercise this power, but they must provide a reason for blocking. If your objection to this item has been resolved, you can change your vote.
+
+![](/images/block.png) Someone has blocked this item – Regardless of how you voted, if someone else has blocked this item, you will see this. This item will not e accepted until the person that voted to block, changes their block.
+
+
