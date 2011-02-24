@@ -145,14 +145,12 @@ Voting on the Dashboard functions using lazy majority. Lazy majority is a vote t
 * when someone Blocks an item - this stops an item and any member has that power. But a block requires an explanation, and should be used with respect. 
 
 
-<div class="terminal">
-examples<br>
-<ul>
-  <li>4 active members and 3 have voted yes in day 1, then the item moves forward</li>
-  <li>if an item is estimated at 3 dice complexity, and 2 members have voted yes, than the item advances</li>
-  <li>if an item is estimated at 6 dice value, and 5 members voted yes and 1 voted no, the difference is 4 which is greater than 6/2=3, therefore the item advances.</li>
-  <li>if an item is estimated at 1 dice value, only one person needs to vote yes and it advances</li>
-</ul>
-</div>
+
+examples
+* 4 active members and 3 have voted yes in day 1, then the item moves forward
+* if an item is estimated at 3 dice complexity, and 2 members have voted yes, than the item advances
+* if an item is estimated at 6 dice value, and 5 members voted yes and 1 voted no, the difference is 4 which is greater than 6/2=3, therefore the item advances.
+* if an item is estimated at 1 dice value, only one person needs to vote yes and it advances
+
 
 _Note - the above logic applies to voting agree/against when an item is New or Open OR when an item is Done and needs to be accepted/rejected. Therefore a yes vote would be agree or accept, and a no vote would be against or rejected._

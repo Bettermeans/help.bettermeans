@@ -8,7 +8,7 @@ main_category: guides
 
 Motions are a way to make big organizational decisions together. Unlike work items, motions are decisions that must be made. 
 
-It is important for team members to vote on motions since they are organizational decision, but different motions require different level of approval from the team.
+It is important for team members to vote on motions since they are organizational decisions, but different motions require different levels of approval from the team.
 
 Motion uses
 -----------

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Workstreams
+title: Workstream
 description: FAQ for workstreams
 categories: faq
 main_category: faq

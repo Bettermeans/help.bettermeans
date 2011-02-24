@@ -6,7 +6,7 @@ categories: faq popular
 main_category: faq
 ---
 
-Central to the BetterMeans platform is a new set of rules of engagement called the Open Enterprise Governance model. The open enterprise model offers a new way of working together that is decentralized and dynamic. We are replacing the command and control hierarchy with a collaborate and co-create model. In this new model, there are no bosses and no job titles, but there are different levels of engagement with a project workstreams. Below is a summary of key points, but to read the full governance model, click here.
+Central to the BetterMeans platform is a new set of rules of engagement called the Open Enterprise Governance model. The open enterprise model offers a new way of working together that is decentralized and dynamic. We are replacing the command and control hierarchy with a collaborate and co-create model. In this new model, there are no bosses and no job titles, but there are different levels of engagement with a project workstream. Below is a summary of key points, but to read the full governance model, click here.
 
 What are the levels of engagement?
 ----------------------------------

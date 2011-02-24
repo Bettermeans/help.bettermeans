@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Activity Stream
+title: Activity
 description: How to use and understand the activity stream
 categories: guides
 main_category: guides
