@@ -6,7 +6,7 @@ categories: faq
 main_category: faq
 ---
 
-A Workstream is our lingo for a group or set of work. A workstream could be a department of your organization or it could be a specific project that you are working on by yourself or with others. For information on how to start a workstream, click here.
+A Workstream is our lingo for a group or set of work. A workstream could be a department of your organization or it could be a specific project that you are working on by yourself or with others ([Information on how to start a workstream](/workstreamguide))
 
 What is a Project Subworkstream?
 --------------------------------
@@ -23,12 +23,13 @@ What is a Public Workstream?
 
 When you create a workstream, the "public" box is checked by default and if you leave it so, you are creating a public workstream. Public workstreams are available for anyone to see, comment on, contribute to. By creating a public workstream, you are opening up the possibility for like-minded individuals to find you and engage with you on your work. We are excited about openness and transparency and the richness that it can bring to all of our work – hence why we are allowing people to start unlimited public workstreams for free. Go forth and collaborate openly and democratically.
 
+![](/images/new-workstream1-p.png)
+
 Can I change a Workstream from Public to Private?
 -------------------------------------------------
 
 Yes, it is possible to change a public workstream or project subworkstream into a private workstream, and this can be accomplished by the admin or through a motion. When this happens, every team member automatically gains clearance, and contributors have to be granted clearance manually.
 
-![](/images/new-workstream1-p.png)
 
 How do I delete a workstream?
 -----------------------------

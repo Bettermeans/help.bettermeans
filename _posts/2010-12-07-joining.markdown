@@ -8,12 +8,12 @@ main_category: getting_started
 
 So you decided to join an existing workstream, we are very excited that you have decided to come join the party. Allow us to give you a few tips for navigating around...
 
-If you don't understand what a workstream is, click here.
+If you don't understand what a workstream is, [click here](/workstreams).
 
 Some useful tools will be:
 
-* The Activity stream to see what has been happening most recently.
-* The Dashboard to get an overview of the work being done. From here you can also offer new ideas, comment, vote, prioritize and more. 
+* The [Activity stream](/activity_stream) to see what has been happening most recently.
+* The [Dashboard](/dashboard) to get an overview of the work being done. From here you can also offer new ideas, comment, vote, prioritize and more. 
   * Important to note is that each workstream and project subworkstream has its own dashboard, so be sure to dig down to see all the levels of work.
   * A good first step is to go through the work items one by one and vote on the ones that interest you or seem important.
   * If there's a comment you'd like to add, share your thoughts.
@@ -22,11 +22,11 @@ Some useful tools will be:
   * As you take on work tasks, new ones might occur to you so just add them in the appropriate workstream dashboard.
 * Then, you might want to visit the Discussion areas for larger issues or contribute to the various workstream Wikis.
 
-You can see an overview of your team (in the Overview or Team tabs) and also invite others to join your work.
+You can see an overview of your team (in the Overview or Team tabs) and also [invite](/invitations) others to join your work.
 
-Once you start working, your homepage will become populated with the items that you own, the workstreams you are involved in, and the activity relevant to your work.
+Once you start working, your [homepage](http://secure.bettermeans.com/welcome) will become populated with the items that you own, the workstreams you are involved in, and the activity relevant to your work.
 
-Also remember, that you can also always start your own workstream for your own project.
+Also remember, that you can also always [start your own workstream](/workstreamguide) for your own project.
 
 BetterMeans is a tool to help you be more productive and share tasks and decision making democratically. The more you and your team come to understand it and use it, the more useful it becomes.
 

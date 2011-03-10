@@ -6,7 +6,7 @@ categories: faq popular
 main_category: faq
 ---
 
-Credits are a way of tracking contribution to a project. When credits are activated in a project workstream, credits are then used to track, record and make transparent the efforts of each team member. Work items are estimated in credits and when work is completed and a retrospective conducted, credits are then awarded to participants based on their peer evaluation.
+Credits are a way of tracking contribution to a project. When credits are [activated](/workstreamguide) in a project workstream, credits are then used to track, record and make transparent the efforts of each team member. Work items are estimated in credits and when work is completed and a [retrospective](/retros) conducted, credits are then awarded to participants based on their peer evaluation.
 
 ![](/images/credits7-f.png)
 
@@ -15,7 +15,7 @@ Credits can also be another word for money, cash, dollar dollar bills, accounts 
 Are credits optional?
 ---------------------
 
-Yes, when the project workstream is created, there is an option to use credits or not.
+Yes, when the project workstream is [created](/workstreamguide), there is an option to use credits or not.
 
 How can I know if a project workstream is using credits?
 --------------------------------------------------------
@@ -32,7 +32,7 @@ Credits are an exciting new way to track the true contribution of each member. I
 How can I use credits in my project?
 ------------------------------------
 
-When you create a project workstream, just check the box that says credits. Only admins have the ability to access this.
+When you [create a project workstream](/workstreamguide), just check the box that says credits. Only admins have the ability to access this.
 
 ![](/images/new-workstream1-f.png)
 
@@ -54,3 +54,5 @@ What is the difference between "All Credits" and "Active Credits" and "My Credit
 All Credits include every credit that has been issued for the enterprise to date, regardless of whether anyone has deactivated their credits.
 Active Credits are ONLY the credits that are active, which no one has de-activated. If you are waiting to be paid, this is the line you are waiting in.
 My Credits are all the credits that you have earned, and it is under this list where you can Deactivate and Activate you own credits. 
+
+![](/images/credits7-f.png)

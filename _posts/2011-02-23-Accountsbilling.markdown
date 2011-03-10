@@ -9,7 +9,7 @@ main_category: faq
 How much does Bettermeans cost?
 ----------------------
 
-Well, it depends, naturally. We are excited about transparency and therefore we do not charge for public workstreams. You get unlimited public workstreams and public users, meaning you can work/play as much as you want with whomever you want if it is all public. 
+Well, it depends, naturally. We are excited about transparency and therefore we do not charge for public workstreams. You get unlimited public workstreams and public users, meaning you can work/play as much as you want with whomever you want if it is all [public](/workstreams). 
 
 However, if you prefer privacy for your work and you only want those that you invite to come work with you, then you must pay for our private service. We have a bucketed pricing structure depending on the number of private workstreams and private users. All paying plans get a Free 30 Day trial.
 

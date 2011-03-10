@@ -6,7 +6,7 @@ categories: faq popular
 main_category: faq
 ---
 
-Central to the BetterMeans platform is a new set of rules of engagement called the Open Enterprise Governance model. The open enterprise model offers a new way of working together that is decentralized and dynamic. We are replacing the command and control hierarchy with a collaborate and co-create model. In this new model, there are no bosses and no job titles, but there are different levels of engagement with a project workstream. Below is a summary of key points, but to read the full governance model, click here.
+Central to the BetterMeans platform is a new set of rules of engagement called the Open Enterprise Governance model. The open enterprise model offers a new way of working together that is decentralized and dynamic. We are replacing the command and control hierarchy with a collaborate and co-create model. In this new model, there are no bosses and no job titles, but there are different levels of engagement with a project workstream. Below is a summary of key points, or you can [read the full governance model](http://bettermeans.org/front/learn-more/open-enterprise-governance-model/).
 
 What are the levels of engagement?
 ----------------------------------
@@ -25,7 +25,7 @@ Contributors are users who have completed work in a project workstream. Anyone c
 * providing moral support (a ‘thank you’ goes a long way)
 * supporting other users
 
-Contributors are welcome to participate as much as possible. Contributors engage with the enterprise through the Project Workstream dashboards. They can start (or join) any open Work Item. In addition to starting and joining Work Items, users can use the dashboard to vote in the following ways:
+Contributors are welcome to participate as much as possible. Contributors engage with the enterprise through the Project Workstream [dashboards](/dashboard). They can start (or join) any open Work Item. In addition to starting and joining Work Items, users can use the dashboard to vote in the following ways:
 
 * prioritizing existing Work Items
 * voting on new ideas (agree/disagree)

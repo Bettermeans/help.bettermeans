@@ -15,8 +15,8 @@ Motion uses
 
 Motions can be used for such things as:
 
-* Nominating a new member
-* Nominating a core team member
+* Nominating a new [member](/membership)
+* Nominating a [core team member](/membership)
 * Revised mission statement
 * New strategic direction
 * and more...
@@ -49,6 +49,7 @@ Third
 Once the motion is created, you will have an opportunity to vote, as will others.
 
 There are 4 types of votes: 
+![](/images/motionoptions.png)
 
 * "Agree" - agrees that the action should move forward
 * "Neutral" - indicates that attention has been given to the action but abstaining from voting one way or another 
@@ -57,7 +58,7 @@ There are 4 types of votes:
 
 Another way to abstain from the vote is for participants to simply not participate. However, it is more helpful to cast a ‘neutral’ vote than to abstain, since this allows the team to gauge the general feeling of the community if the proposal is controversial.
 
-The entire community, from interested user to the most active Core Team Member, has a vote. The enterprise encourages everyone to express their opinions in all discussion and all votes. However, only Members of the enterprise and/or Core Team Members have binding votes for the purposes of decision making. It is therefore their responsibility to ensure that the opinions of the entire community are considered. While only Members and Core Team Members have a binding vote, a well-justified ‘block’ from a non-Member must be considered by the community, and if appropriate, supported by a binding ‘block’.
+The entire community, from interested user to the most active Core Team Member, has a vote. The enterprise encourages everyone to express their opinions in all discussion and all votes. However, only [Members](/membership) of the enterprise and/or [Core Team Members](/membership) have binding votes for the purposes of decision making. It is therefore their responsibility to ensure that the opinions of the entire community are considered. While only Members and Core Team Members have a binding vote, a well-justified ‘block’ from a non-Member must be considered by the community, and if appropriate, supported by a binding ‘block’.
 
 A ‘block’, when cast by a Member or Core Team Member, essentially becomes a ‘veto’.
 
@@ -92,7 +93,7 @@ Motion Breakdown
 ----------------
 
 * New Contributor: Lazy consensus of any Member
-* Work Item moving to open queue and Work Item acceptance is dependent on the estimated value of that item, click here for more detail: Lazy consensus of Members
+* Work Item moving to open queue and Work Item acceptance is dependent on the estimated value of that item, [click here for more detail](/dashboard): Lazy consensus of Members
 * New Project Workstream: Lazy majority of Members
 * New Member: Unanimous approval of Core Team
 * Member removal: Unanimous consensus of Core Team

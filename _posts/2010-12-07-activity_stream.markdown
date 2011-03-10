@@ -22,7 +22,7 @@ The Activity stream gives you a good sense of the most recent activity in the pr
 What is the logic in what is included in the Activity Stream?
 -------------------------------------------------------------
 
-There is an activity stream for every project workstream and it aggregates downward. What this means is that when you are looking at the activity, you'll see the breadcrumbs at the top left that indicates what part of the project you are looking at. For example, you might be looking at a project  subworkstream of the overall project, this means that you are only seeing the activity for that project subworkstream. However the activity stream aggregates downward, meaning that if you are looking at the Activity for a project workstream that has 3 project subworkstreams, the activity will show all the activity for the project workstream AND its 3 project subworkstreams - thus aggregating downward. Important to note is that while the Activity aggregates downward, the Dashboard does not.
+There is an activity stream for every project workstream and it aggregates downward. What this means is that when you are looking at the activity, you'll see the breadcrumbs at the top left that indicates what part of the project you are looking at. For example, you might be looking at a project  subworkstream of the overall project, this means that you are only seeing the activity for that project subworkstream. However the activity stream aggregates downward, meaning that if you are looking at the Activity for a project workstream that has 3 project subworkstreams, the activity will show all the activity for the project workstream AND its 3 project subworkstreams - thus aggregating downward. Important to note is that while the Activity aggregates downward, the [Dashboard](/dashboard) does not.
 
 In terms of what is included in the Activity stream, pretty much everything. Anything that is modified in the project workstream and all its work items shows up in the Activity, EXCEPT voting, prioritizing and estimating. The reason for this is that there is a lot of voting, prioritizing and estimating that will happen and we did not want to flood the activity with that information. 
 
@@ -46,8 +46,8 @@ Things that will NOT show up in the activity stream:
 * Votes (Agree, Disagree, Accept, Reject, etc)
 * Prioritization
 * Estimation of complexity/cost of work items
-* A retrospective starting or ending (look to notifications for this)
-* Credits being awarded to you or anyone (look to notification for credits awarded to you)
+* A [retrospective](/retros) starting or ending (look to notifications for this)
+* [Credits](/credits) being awarded to you or anyone (look to notification for credits awarded to you)
 
 
 Can I sort the activity?

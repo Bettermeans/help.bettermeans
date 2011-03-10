@@ -40,5 +40,7 @@ Once the invite is sent, those people will be automatically invited to the Works
 * If a person already has a BetterMeans account, they will receive a notification indicating that they have access to your workstream 
 
 
-Still have questions? We are working to constantly improve this site, therefore PLEASE email us with your additional questions at support@bettermeans.com.
+Still have questions? 
+---------------------
 
+We are working to constantly improve this site, therefore _please_ email us with your additional questions at <a href="mailto:support@bettermeans.com">support@bettermeans.com</a>

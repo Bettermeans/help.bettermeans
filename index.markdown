@@ -10,9 +10,9 @@ Use the sidebar on the right side of this site to access our guides!
 Getting started with Bettermeans
 -----------------------------------
 
-As a first step, read the [getting started section](insertlink) and watch the tour
+As a first step, read the [getting started section](/quickstart) and watch the tour
 
-If you need help or have any questions, feel free to [contact support](mailto:support@bettermeans.com) or [ask the community](https://secure.bettermeans.com/projects/21/boards/39).
+If you need help or have any questions, feel free to [ask the community](https://secure.bettermeans.com/projects/21/boards/39) or [contact support](mailto:support@bettermeans.com).
 
 <object width="640" height="390">
   <param name="movie" value="http://www.youtube.com/v/0wJAf229YUs"></param>

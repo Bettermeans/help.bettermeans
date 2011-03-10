@@ -38,17 +38,17 @@ This probably all sounds jargony and ethereal, indeed it is different, but we wa
 Features and tools
 ------------------
 
-Follow the Quickstart Guide to get going on your project and see the platform for yourself.
+Follow the [Quickstart Guide](/quickstart) to get going on your project and see the platform for yourself.
 
-Tools like the Dashboard allow anyone to offer ideas and collaborate on work.
+Tools like the [Dashboard](/dashboard) allow anyone to offer ideas and collaborate on work.
 
-The Activity stream allows you to follow all the work being done.
+The [Activity stream](/activity_stream) allows you to follow all the work being done.
 
-BetterMeans offers the option to use an innovative form of compensation, called credits, in which everyone estimates the value of work and compensation is based on peer feedback through retrospectives.
+BetterMeans offers the option to use an innovative form of compensation, called [credits](/credits), in which everyone estimates the value of work and compensation is based on peer feedback through [retrospectives](/retros).
 
-If you choose to have a public project workstream, anyone can contribute and over time people gain membership in your project workstream and a voice in the direction of the project.
+If you choose to have a [public project workstream](/workstreams), anyone can contribute and over time people gain [membership](/membership) in your project workstream and a voice in the direction of the project.
 
-Make team-wide decisions with transparency using motions.
+Make team-wide decisions with transparency using [motions](/motions).
 
 If you are intrigued by the larger vision of the Open Enterprise, we suggest that you visit <a href="http://www.bettermeans.org">bettermeans.org</a> where we are working towards this lofty goal.
 

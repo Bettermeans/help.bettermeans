@@ -8,6 +8,14 @@ main_category: guides
 
 Retrospectives are a form of 360 assessment, that allows credit to be awarded by your peers and your own self-assessment. This is an opportunity to be fairly compensated for your contribution.
 
+<object width="640" height="390">
+  <param name="movie" value="http://www.youtube.com/v/Fyjn0XQc9jc"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <embed src="http://www.youtube.com/v/Fyjn0XQc9jc"
+  type="application/x-shockwave-flash" allowfullscreen="true"
+  width="640" height="390"></embed>
+</object>
+
 When does a retrospective happen?
 ---------------------------------
 
@@ -22,7 +30,7 @@ Retrospective How To
 --------------------
 
 Now that you have the basics of what a retrospective is, allow us to walk you through how you can participate in a retrospective.
-When you are part of a retrospective you will receive a notification, from the notification page you can click "Participate" and the retrospective will open. 
+When you are part of a retrospective you will receive a [notification](/notifications), from the notification page you can click "Participate" and the retrospective will open. 
 
 ![](/images/retro-note-f.png)
 

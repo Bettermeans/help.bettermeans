@@ -5,20 +5,31 @@ description: How to use the dashboard and how voting works
 categories: guides popular
 main_category: guides
 ---
+<object width="640" height="390">
+  <param name="movie" value="http://www.youtube.com/v/0WPUMLP2XDk"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <embed src="http://www.youtube.com/v/0WPUMLP2XDk"
+  type="application/x-shockwave-flash" allowfullscreen="true"
+  width="640" height="390"></embed>
+</object>
 
-![](/images/better_means.jpg)
 
 What is the Dashboard?
 ----------------------
 
 The dashboard is a central point of the BetterMeans platform and allows you to see all of the work items in a project workstream. From the Dashboard you have an overview of the status of all the items in a project workstream and you also have the ability to take action on items. Here is what the Dashboard looks like, once you get working.
 
+![](/images/Dash2-g.png)
+
 This probably looks overwhelming and also a bit exciting. We are going to help you understand how to work with this interface and feel familiar and liberated by this tool. Also note, that the Dashboard above is a particularly busy project workstream these days, and other Dashboard might look simpler, like this one. It all depends on how you are working.
+
+![](/images/Dash1-f.png)
+
 
 What is included in the Dashboard?
 ----------------------------------
 
-The Dashboard includes all work items. Work items are any item that has been proposed to be completed. Work items could include; bugs, features, expenses, recurring tasks, chores, or gifts (for more detail on these, click here). Motions and discussions are not included in the Dashboard.
+The Dashboard includes all work items. Work items are any item that has been proposed to be completed. Work items could include; bugs, features, expenses, recurring tasks, chores, or gifts (for [more detail](/dashkey)). [Motions](/motions) and discussions are not included in the Dashboard.
 
 Also important to note is that each project workstream and project subworkstream has its own Dashboard and does NOT aggregate downward. For example, in the two dashboards displayed above you'll notice by the breadcrumbs in the upper left corner that the first Dashboard is for the Website Platform project workstream, while the second Dashboard is for the Help Site, which is a project subworkstream of the Website Platform. Each of these has separate dashboards and work items, meaning that the Help Site work items DO NOT appear in the Website Platform Dashboard. Therefore to see all the work items you want to dig into each project workstream and project subworkstream.
 
@@ -30,12 +41,20 @@ The Dashboard is not only a good place to see an overview of all the work, but y
 
 From the dashboard you can also open up a lightbox (a window within the window), where you can see the details of an item, including: full history, discussion, status, creator, owner, and more. Also from the lightbox, you can take all the actions that you would in the dashboard, voting, estimation, etc. The nice part about the lightbox is that when you are done, you can close the lightbox and you are back on the Dashboard where you left off. Here is what the lightbox view looks like.
 
-![](/images/lightbox.png)
+<object width="640" height="390">
+  <param name="movie" value="http://www.youtube.com/v/ISNn3TK21iY"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <embed src="http://www.youtube.com/v/ISNn3TK21iY"
+  type="application/x-shockwave-flash" allowfullscreen="true"
+  width="640" height="390"></embed>
+</object>
+
 
 What do all the little icons mean?
 ----------------------------------
 
-So glad that you asked, we have conveniently assembled a detailed key of all the things that you see in the Dashboard, just click here.
+So glad that you asked, we have conveniently assembled a [detailed key](/dashkey) of all the things that you see in the Dashboard.
+
 
 How do I create an item?
 ------------------------
@@ -49,15 +68,17 @@ How do I vote on an item?
 
 You can vote on an item by clicking the orange Agree? button...
 
-When you click on this you will be given options and you can cast your vote. For more detail on what the different option mean, click here.
-
 ![](/images/Dash4%20vote.png)
+
+When you click on this you will be given options and you can cast your vote. [More detail on what the different options mean](/dashkey).
+
+![](/images/dash4vote2.png)
+
 
 How do I estimate an item?
 --------------------------
 
-You can estimate an item by clicking on the
- , and then selecting your assessment of the value/complexity. For more information on estimation, click here.
+You can estimate an item by clicking on the ![](/images/dice_No.png), and then selecting your assessment of the value/complexity. [More information on estimation](/estimation).
 
 ![](/images/Dash5%20estimate.png)
 
@@ -85,7 +106,7 @@ Yes, you can join an item that has been started by another person by clicking on
 Can I add someone to an item I own?
 -----------------------------------
 
-Yes, if you are the owner of an item you can both add people and remove people from your team for this particular work item. To do this, open up the lightbox view of an In Progress Item. On the right side of the lightbox, Under "Joined By" there is a link to "+Add Someone". Then select from the Drop down menu of the members and contributors to the enterprise. If you do not see the person you are looking for, you need to invite them to the project workstream first, for tips on inviting people, click here.
+Yes, if you are the owner of an item you can both add people and remove people from your team for this particular work item. To do this, open up the lightbox view of an In Progress Item. On the right side of the lightbox, Under "Joined By" there is a link to "+Add Someone". Then select from the Drop down menu of the members and contributors to the enterprise. If you do not see the person you are looking for, you need to invite them to the project workstream first. [Tips on inviting people](/invitations).
 
 ![](/images/Dash-add.png)
 
