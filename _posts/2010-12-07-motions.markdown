@@ -32,7 +32,7 @@ Starting a motion
 First 
 -----
 
-Go to the Overview page for the project workstream and click on "New Motion" from the right navigation menu.
+Go to the Overview page for the workstream and click on "New Motion" from the right navigation menu.
 
 ![](/images/motion.png)
 
@@ -94,7 +94,7 @@ Motion Breakdown
 
 * New Contributor: Lazy consensus of any Member
 * Work Item moving to open queue and Work Item acceptance is dependent on the estimated value of that item, [click here for more detail](/dashboard): Lazy consensus of Members
-* New Project Workstream: Lazy majority of Members
+* New Workstream: Lazy majority of Members
 * New Member: Unanimous approval of Core Team
 * Member removal: Unanimous consensus of Core Team
 * New Core Team Member: Unanimous consensus of Members

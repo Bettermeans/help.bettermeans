@@ -17,11 +17,11 @@ main_category: guides
 What is the Dashboard?
 ----------------------
 
-The dashboard is a central point of the BetterMeans platform and allows you to see all of the work items in a project workstream. From the Dashboard you have an overview of the status of all the items in a project workstream and you also have the ability to take action on items. Here is what the Dashboard looks like, once you get working.
+The dashboard is a central point of the BetterMeans platform and allows you to see all of the work items in a workstream. From the Dashboard you have an overview of the status of all the items in a workstream and you also have the ability to take action on items. Here is what the Dashboard looks like, once you get working.
 
 ![](/images/Dash2-g.png)
 
-This probably looks overwhelming and also a bit exciting. We are going to help you understand how to work with this interface and feel familiar and liberated by this tool. Also note, that the Dashboard above is a particularly busy project workstream these days, and other Dashboard might look simpler, like this one. It all depends on how you are working.
+This probably looks overwhelming and also a bit exciting. We are going to help you understand how to work with this interface and feel familiar and liberated by this tool. Also note, that the Dashboard above is a particularly busy workstream these days, and other Dashboard might look simpler, like this one. It all depends on how you are working.
 
 ![](/images/Dash1-f.png)
 
@@ -31,7 +31,7 @@ What is included in the Dashboard?
 
 The Dashboard includes all work items. Work items are any item that has been proposed to be completed. Work items could include; bugs, features, expenses, recurring tasks, chores, or gifts (for [more detail](/dashkey)). [Motions](/motions) and discussions are not included in the Dashboard.
 
-Also important to note is that each project workstream and project subworkstream has its own Dashboard and does NOT aggregate downward. For example, in the two dashboards displayed above you'll notice by the breadcrumbs in the upper left corner that the first Dashboard is for the Website Platform project workstream, while the second Dashboard is for the Help Site, which is a project subworkstream of the Website Platform. Each of these has separate dashboards and work items, meaning that the Help Site work items DO NOT appear in the Website Platform Dashboard. Therefore to see all the work items you want to dig into each project workstream and project subworkstream.
+Also important to note is that each workstream and subworkstream has its own Dashboard and does NOT aggregate downward. For example, in the two dashboards displayed above you'll notice by the breadcrumbs in the upper left corner that the first Dashboard is for the Website Platform workstream, while the second Dashboard is for the Help Site, which is a subworkstream of the Website Platform. Each of these has separate dashboards and work items, meaning that the Help Site work items DO NOT appear in the Website Platform Dashboard. Therefore to see all the work items you want to dig into each workstream and subworkstream.
 
 
 How is the Dashboard used?
@@ -39,7 +39,7 @@ How is the Dashboard used?
 
 The Dashboard is not only a good place to see an overview of all the work, but you can take action directly from the dashboard. You can create an item, vote, estimate, prioritize, start, join, finish, and accept or reject an item. For more information on each of these actions, see below.
 
-From the dashboard you can also open up a lightbox (a window within the window), where you can see the details of an item, including: full history, discussion, status, creator, owner, and more. Also from the lightbox, you can take all the actions that you would in the dashboard, voting, estimation, etc. The nice part about the lightbox is that when you are done, you can close the lightbox and you are back on the Dashboard where you left off. Here is what the lightbox view looks like.
+From the dashboard you can also open up a lightbox (a window within the window), where you can see the details of an item, including: full history, discussion, status, creator, owner, and more. Also from the lightbox, you can take all the actions that you would in the dashboard, voting, estimation, etc. The nice part about the lightbox is that when you are done, you can close the lightbox and you are back on the Dashboard where you left off. Here is a tour of the lightbox and how it is used.
 
 <object width="640" height="390">
   <param name="movie" value="http://www.youtube.com/v/ISNn3TK21iY"></param>
@@ -92,7 +92,7 @@ To prioritize the item, click the dot or arrow to the right of the voting button
 How can I start an item?
 ------------------------
 
-Items can be started from the Open queue. To start an item click on the blue "Start" button. Anyone with access to your project workstreams can start an item, however once an item is finished, the work can be accepted or rejected. Items in the top 3 priority levels or with 0 dice value are able to be started.
+Items can be started from the Open queue. To start an item click on the blue "Start" button. Anyone with access to your workstreams can start an item, however once an item is finished, the work can be accepted or rejected. Items in the top 3 priority levels or with 0 dice value are able to be started.
 
 ![](/images/start-f.png)
 
@@ -106,7 +106,7 @@ Yes, you can join an item that has been started by another person by clicking on
 Can I add someone to an item I own?
 -----------------------------------
 
-Yes, if you are the owner of an item you can both add people and remove people from your team for this particular work item. To do this, open up the lightbox view of an In Progress Item. On the right side of the lightbox, Under "Joined By" there is a link to "+Add Someone". Then select from the Drop down menu of the members and contributors to the enterprise. If you do not see the person you are looking for, you need to invite them to the project workstream first. [Tips on inviting people](/invitations).
+Yes, if you are the owner of an item you can both add people and remove people from your team for this particular work item. To do this, open up the lightbox view of an In Progress Item. On the right side of the lightbox, Under "Joined By" there is a link to "+Add Someone". Then select from the Drop down menu of the members and contributors to the enterprise. If you do not see the person you are looking for, you need to invite them to the workstream first. [Tips on inviting people](/invitations).
 
 ![](/images/Dash-add.png)
 
@@ -117,7 +117,7 @@ Similarly, if you want to remove someone, go to the same place in the lightbox a
 Can anyone vote/estimate/prioritize?
 ------------------------------------
 
-Yes, anyone who has access to your project workstream can vote, estimate or prioritize. However, only the votes of the members will be binding. All votes/estimates/priorities of contributors will be non-binding. The non-binding votes will appear in the record, however they will not be factored into the advancement, estimation or prioritization. The only votes that will make an impact will be the binding votes. This system allows you to get a sense of the larger community's opinion, however ultimately you and your team members are the ones that determine the direction of the project.
+Yes, anyone who has access to your workstream can vote, estimate or prioritize. However, only the votes of the members will be binding. All votes/estimates/priorities of contributors will be non-binding. The non-binding votes will appear in the record, however they will not be factored into the advancement, estimation or prioritization. The only votes that will make an impact will be the binding votes. This system allows you to get a sense of the larger community's opinion, however ultimately you and your team members are the ones that determine the direction of the project.
 
 Can anyone create an item?
 --------------------------
@@ -161,7 +161,7 @@ The more detailed answer...
 
 Voting on the Dashboard functions using lazy majority. Lazy majority is a vote that is open for 3 days and at the end of the 3 days if there are more yes' than no's than an item advances. This means that those who show up to vote, drive the direction of the work, and there is no waiting for unanimity. The exception to the 3 days of waiting are:
 
-* if the majority of active members on that project workstream have voted yes, than the item advances before the 3 days are up
+* if the majority of active members on that workstream have voted yes, than the item advances before the 3 days are up
 * if the difference between yes and no votes is greater than half the # on the dice.
 * when someone Blocks an item - this stops an item and any member has that power. But a block requires an explanation, and should be used with respect. 
 

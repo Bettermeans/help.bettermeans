@@ -8,7 +8,7 @@ main_category: faq
 
 Estimation is the way in which an item is assessed by the team. Every member of a team has a chance to estimate an item while it is new or open. The final estimation is the average of all the member votes. Estimation means different things based on whether [credits](/credits) are being used or not.
 If Credits are being used: The estimation is the value of the work item to the project. In other words, how much a person/team will be paid for completing the item.
-If Credits are not being used or it is a Volunteer Project Workstream: The estimation is based on the level of complexity of the item.
+If Credits are not being used or it is a Volunteer Workstream: The estimation is based on the level of complexity of the item.
 
 How can I estimate an item?
 ---------------------------
@@ -19,7 +19,7 @@ You can estimate an item by clicking on the ![](/images/dice_NO.png) from the it
 
 What do the dice mean?
 ----------------------
-The dice are a quick visual indicator of the current average estimate for an item. Depending on the scale chosen at the [creation of the project workstream](/workstreamguide), the dice may have different values, but the dice are an indicator of relative values within a project workstream. Here is an example of different dice values, you will have this view when you estimate an item.
+The dice are a quick visual indicator of the current average estimate for an item. Depending on the scale chosen at the [creation of the workstream](/workstreamguide), the dice may have different values, but the dice are an indicator of relative values within a workstream. Here is an example of different dice values, you will have this view when you estimate an item.
 
 ![](/images/estimation-options.png)
 

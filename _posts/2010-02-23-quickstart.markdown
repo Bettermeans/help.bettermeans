@@ -17,7 +17,7 @@ If you are creating a new workstream:
 5. Start following your [Activity Stream](/activity_stream) to see what others are contributing
 6. Use the [Dashboard](/dashboard) or Item view to comment, prioritize, agree/disagree and estimate
 
-for more detailed information on starting a workstream, [click here](/workstreamguide).
+[More detailed information on starting a workstream](/workstreamguide).
 
 
 If you are joining an existing workstream:
@@ -29,4 +29,4 @@ If you are joining an existing workstream:
 5. Add work items to your [Dashboard](/dashboard)
 6. [Invite](/invitations) people to join you from your Workstream Overview Page or the Team tab
 
-for more detailing information on joining an existing workstream, [click here](/joining).
+[More detailed information on joining an existing workstream](/joining).

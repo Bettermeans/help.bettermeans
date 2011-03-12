@@ -8,10 +8,10 @@ main_category: faq
 
 A Workstream is our lingo for a group or set of work. A workstream could be a department of your organization or it could be a specific project that you are working on by yourself or with others ([Information on how to start a workstream](/workstreamguide))
 
-What is a Project Subworkstream?
+What is a Subworkstream?
 --------------------------------
 
-A project subworkstream is the same concept as a workstream, but it is nested within a workstream. For example, if your workstream is a department, then a project subworkstream might be a specific project within the department. If your workstream is a project, then a project subworkstream might be a specific area of expertise within the project.
+A subworkstream is the same concept as a workstream, but it is nested within a workstream. For example, if your workstream is a department, then a subworkstream might be a specific project within the department. If your workstream is a project, then a subworkstream might be a specific area of expertise within the project.
 
 What is a Private Workstream?
 -----------------------------
@@ -28,13 +28,14 @@ When you create a workstream, the "public" box is checked by default and if you 
 Can I change a Workstream from Public to Private?
 -------------------------------------------------
 
-Yes, it is possible to change a public workstream or project subworkstream into a private workstream, and this can be accomplished by the admin or through a motion. When this happens, every team member automatically gains clearance, and contributors have to be granted clearance manually.
+Yes, it is possible to change a public workstream or subworkstream into a private workstream, and this can be accomplished by the admin or through a motion. When this happens, every team member automatically gains clearance, and contributors have to be granted clearance manually.
 
 
 How do I delete a workstream?
 -----------------------------
 
-So far you can't. We're working on it.
+Currently, you can only delete a workstream if you created it and are therefore the administrator. As the creator/administrator of the workstream you will see a "Settings" tab. In the settings tab there are 2 blue buttons on the right and you have the option to "Archive Workstream" or "Delete Workstream". Please note that if you archive a workstream, you can come back later and unarchive it. However if you delete a workstream, it is deleted and cannot be retrieved later.
+
 
 Can I merge two different workstreams into one?
 -----------------------------------------------

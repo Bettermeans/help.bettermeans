@@ -19,7 +19,7 @@ Retrospectives are a form of 360 assessment, that allows credit to be awarded by
 When does a retrospective happen?
 ---------------------------------
 
-When a project workstream is using credits, there will be retrospectives. A retrospective happens when 3000 credits worth of work has been completed within a project workstream, or after 20 days have passed.
+When a workstream is using credits, there will be retrospectives. A retrospective happens when 3000 credits worth of work has been completed within a workstream, or after 20 days have passed.
 
 Who is included in a retrospective?
 -----------------------------------

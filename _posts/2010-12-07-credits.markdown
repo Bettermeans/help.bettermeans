@@ -6,7 +6,7 @@ categories: faq popular
 main_category: faq
 ---
 
-Credits are a way of tracking contribution to a project. When credits are [activated](/workstreamguide) in a project workstream, credits are then used to track, record and make transparent the efforts of each team member. Work items are estimated in credits and when work is completed and a [retrospective](/retros) conducted, credits are then awarded to participants based on their peer evaluation.
+Credits are a way of tracking contribution to a project. When credits are [activated](/workstreamguide) in a workstream, credits are then used to track, record and make transparent the efforts of each team member. Work items are estimated in credits and when work is completed and a [retrospective](/retros) conducted, credits are then awarded to participants based on their peer evaluation.
 
 ![](/images/credits7-f.png)
 
@@ -15,12 +15,12 @@ Credits can also be another word for money, cash, dollar dollar bills, accounts 
 Are credits optional?
 ---------------------
 
-Yes, when the project workstream is [created](/workstreamguide), there is an option to use credits or not.
+Yes, when the workstream is [created](/workstreamguide), there is an option to use credits or not.
 
-How can I know if a project workstream is using credits?
+How can I know if a workstream is using credits?
 --------------------------------------------------------
 
-When you are looking at the overview of a project workstream, if you look across the top at the tabs and you see a Credits tab, the project workstream is using credits, otherwise, the project workstream is not using credits.
+When you are looking at the overview of a workstream, if you look across the top at the tabs and you see a Credits tab, the workstream is using credits, otherwise, the workstream is not using credits.
 
 ![](/images/credits5.png)
 
@@ -32,14 +32,14 @@ Credits are an exciting new way to track the true contribution of each member. I
 How can I use credits in my project?
 ------------------------------------
 
-When you [create a project workstream](/workstreamguide), just check the box that says credits. Only admins have the ability to access this.
+When you [create a workstream](/workstreamguide), just check the box that says credits. Only admins have the ability to access this.
 
 ![](/images/new-workstream1-f.png)
 
-Can I change a project workstream from using credits to not using credits? Or vice versa?
+Can I change a workstream from using credits to not using credits? Or vice versa?
 -----------------------------------------------------------------------------------------
 
-Yes, as the creator and administrator of a project workstream you can change from using credits to not using credits. However this is an important decision and this admin power should be used respectfully. Also note that if you switch, everything must be re-estimated, since the former estimations were based on a different system. To change this, go to the settings tab, click on the Modules tab, and un-check the credits box.
+Yes, as the creator and administrator of a workstream you can change from using credits to not using credits. However this is an important decision and this admin power should be used respectfully. Also note that if you switch, everything must be re-estimated, since the former estimations were based on a different system. To change this, go to the settings tab, click on the Modules tab, and un-check the credits box.
 
 ![](/images/credit-options6-f.png)
 

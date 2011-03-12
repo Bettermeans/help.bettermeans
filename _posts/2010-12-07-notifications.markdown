@@ -8,8 +8,8 @@ main_category: faq
 
 A notification is a message to you from the system and is important to pay attention to. You will receive notifications if you:
 
-* become a [member](/membership) of a project workstream
-* gain clearance to a [private project workstream](/workstreams)
+* become a [member](/membership) of a workstream
+* gain clearance to a [private workstream](/workstreams)
 * are included in a [retrospective](/retros) and therefore need to cast your vote
 * are included in a [retrospective](/retros) that has ended - find out the final assessment
 * receive [credits](/credits), yay!

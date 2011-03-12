@@ -14,7 +14,7 @@ Some useful tools will be:
 
 * The [Activity stream](/activity_stream) to see what has been happening most recently.
 * The [Dashboard](/dashboard) to get an overview of the work being done. From here you can also offer new ideas, comment, vote, prioritize and more. 
-  * Important to note is that each workstream and project subworkstream has its own dashboard, so be sure to dig down to see all the levels of work.
+  * Important to note is that each workstream and subworkstream has its own dashboard, so be sure to dig down to see all the levels of work.
   * A good first step is to go through the work items one by one and vote on the ones that interest you or seem important.
   * If there's a comment you'd like to add, share your thoughts.
   * If there's a specific work item you would like to take on, just click the Start or Join buttons and get to work!

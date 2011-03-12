@@ -6,7 +6,7 @@ categories: guides
 main_category: guides
 ---
 
-The activity stream is a news feed of all of the activity in a project workstream. Any new items, changes to items, status changes, comments, wiki edits, news, member changes and more are in the activity stream. 
+The activity stream is a news feed of all of the activity in a workstream. Any new items, changes to items, status changes, comments, wiki edits, news, member changes and more are in the activity stream. 
 
 ![](/images/Activity2-f.png)
 
@@ -22,9 +22,9 @@ The Activity stream gives you a good sense of the most recent activity in the pr
 What is the logic in what is included in the Activity Stream?
 -------------------------------------------------------------
 
-There is an activity stream for every project workstream and it aggregates downward. What this means is that when you are looking at the activity, you'll see the breadcrumbs at the top left that indicates what part of the project you are looking at. For example, you might be looking at a project  subworkstream of the overall project, this means that you are only seeing the activity for that project subworkstream. However the activity stream aggregates downward, meaning that if you are looking at the Activity for a project workstream that has 3 project subworkstreams, the activity will show all the activity for the project workstream AND its 3 project subworkstreams - thus aggregating downward. Important to note is that while the Activity aggregates downward, the [Dashboard](/dashboard) does not.
+There is an activity stream for every workstream and it aggregates downward. What this means is that when you are looking at the activity, you'll see the breadcrumbs at the top left that indicates what part of the project you are looking at. For example, you might be looking at a subworkstream of the overall project, this means that you are only seeing the activity for that subworkstream. However the activity stream aggregates downward, meaning that if you are looking at the Activity for a workstream that has 3 subworkstreams, the activity will show all the activity for the workstream AND its 3 subworkstreams - thus aggregating downward. Important to note is that while the Activity aggregates downward, the [Dashboard](/dashboard) does not.
 
-In terms of what is included in the Activity stream, pretty much everything. Anything that is modified in the project workstream and all its work items shows up in the Activity, EXCEPT voting, prioritizing and estimating. The reason for this is that there is a lot of voting, prioritizing and estimating that will happen and we did not want to flood the activity with that information. 
+In terms of what is included in the Activity stream, pretty much everything. Anything that is modified in the workstream and all its work items shows up in the Activity, EXCEPT voting, prioritizing and estimating. The reason for this is that there is a lot of voting, prioritizing and estimating that will happen and we did not want to flood the activity with that information. 
 
 However if an item moves from New to Open because enough people have voted and estimated, this status change will appear. Here is a list of the different items that WILL show up in the Activity Stream:
 
@@ -34,9 +34,9 @@ However if an item moves from New to Open because enough people have voted and e
 * New motion is created
 * Motion passes
 * New membership nomination
-* New clearance granted to private project workstream
+* New clearance granted to private workstream
 * News posted about the project
-* Updates to work items, for example an attachment is added or an item is moved to a different project workstream
+* Updates to work items, for example an attachment is added or an item is moved to a different workstream
 * Ownership of a task is taken by a team member
 * Completion of a task
 * Wiki edits
