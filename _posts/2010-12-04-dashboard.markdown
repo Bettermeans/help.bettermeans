@@ -155,6 +155,14 @@ Control is exercised by the team as they vote on items. Every team member gets a
 How do items advance from one queue to the next?
 ------------------------------------------------
 
+<object width="640" height="390">
+  <param name="movie" value="http://www.youtube.com/v/Rbp1Dhijs00"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <embed src="http://www.youtube.com/v/Rbp1Dhijs00"
+  type="application/x-shockwave-flash" allowfullscreen="true"
+  width="640" height="390"></embed>
+</object>
+
 The short answer is that items move when there are more agrees than againsts or more accepts than rejects, and the speed at which they move depends on the value/complexity with the smaller items moving faster. But of course it is more complicated than that.
 
 The more detailed answer...
